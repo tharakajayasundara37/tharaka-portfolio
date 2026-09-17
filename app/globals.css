@@ -6338,3 +6338,517 @@ to{
   z-index:5;
 
 }
+/* ================= MOBILE HERO FINAL CENTER VERSION ================= */
+
+
+@media(max-width:768px){
+
+
+
+/* ================= HERO ================= */
+
+
+.u-hero-scroll,
+.u-hero-scroll .u-hero{
+
+
+    min-height:100vh;
+
+    height:100vh;
+
+    overflow:hidden;
+
+
+}
+
+
+.u-hero{
+
+
+    position:relative;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    justify-content:flex-start;
+
+
+    padding:
+
+    90px 20px 40px;
+
+
+}
+
+
+
+
+
+
+/* ================= NAME ================= */
+
+
+.u-hero-word{
+
+
+    order:1;
+
+
+    position:relative !important;
+
+
+    width:100%;
+
+
+    left:auto !important;
+
+
+    right:auto !important;
+
+
+    top:auto !important;
+
+
+    transform:none !important;
+
+
+    text-align:center;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    z-index:5;
+
+
+}
+
+
+
+
+
+.u-hero-word span{
+
+
+    display:block;
+
+
+    width:100%;
+
+
+    text-align:center;
+
+
+    font-size:13px;
+
+
+    letter-spacing:.35em;
+
+
+    color:#008fc9;
+
+
+}
+
+
+
+
+
+
+/* ================= TITLE ================= */
+
+
+.u-hero-word{
+
+
+    font-size:55px;
+
+
+    line-height:.82;
+
+
+    letter-spacing:-.07em;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+
+/* ================= IMAGE BIGGER ================= */
+
+.u-portrait{
+
+    order:2;
+
+    position:relative;
+
+    width:100%;
+
+    height:800px;
+
+    margin-top:2px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+    left:auto;
+
+    right:auto;
+
+    top:auto;
+
+    bottom:auto;
+
+    transform:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    z-index:4;
+
+}
+.u-portrait img{
+
+    width:200%;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+
+
+/* ================= LEFT CONTENT ================= */
+
+
+.u-hero-left{
+
+
+    order:3;
+
+
+    position:relative;
+
+
+    width:100%;
+
+
+    margin-top:20px;
+
+
+    padding:0;
+
+
+    left:auto;
+
+
+    right:auto;
+
+
+    top:auto;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    text-align:center;
+
+
+    z-index:10;
+
+
+}
+
+
+
+
+
+
+
+/* ================= ROLE LIST ================= */
+
+
+.u-role-list{
+
+
+    position:relative;
+
+
+    width:max-content;
+
+
+    padding-left:22px;
+
+
+    margin:0 auto;
+
+
+    text-align:left;
+
+
+}
+
+
+
+
+
+.u-role-list::before{
+
+
+    left:0;
+
+
+    top:5px;
+
+
+    height:95%;
+
+
+    width:4px;
+
+
+}
+
+.u-role-list span{
+
+
+    font-size:18px;
+
+
+    line-height:1.05;
+
+
+}
+
+
+
+
+
+
+
+/* ================= PROJECT ABOUT ================= */
+
+
+.u-link-row{
+
+
+    width:100%;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    gap:35px;
+
+
+    margin-top:22px;
+
+
+}
+
+
+
+
+
+.u-link-row a{
+
+
+    font-size:10px;
+
+
+}
+
+
+
+
+
+
+
+/* ================= DOWNLOAD CV ================= */
+
+
+.u-hero-left .u-cv-button{
+
+
+    position:relative;
+
+
+    left:auto;
+
+
+    top:auto;
+
+    margin:
+
+    35px auto 0;
+
+
+    padding:
+
+    16px 45px;
+
+
+    transform:none;
+
+
+}
+
+
+
+
+
+
+
+/* ================= HIDE DESKTOP ELEMENTS ================= */
+
+
+.u-hero-right{
+
+
+    display:none;
+
+
+}
+
+
+
+
+
+
+
+/* ================= CONTACT BUTTON ================= */
+
+
+.u-floating-contact{
+
+
+    position:fixed;
+
+
+    right:20px;
+
+
+    bottom:20px;
+
+
+    z-index:50;
+
+
+}
+
+
+
+
+
+
+
+/* ================= SCROLL ================= */
+
+
+.u-scroll-label{
+
+
+    position:fixed;
+
+
+    left:20px;
+
+
+    bottom:20px;
+
+
+    z-index:50;
+
+
+}
+
+
+
+
+
+
+
+/* ================= REMOVE EXTRA BAR ================= */
+
+
+.u-marquee,
+
+.u-scroll-text{
+
+
+    display:none;
+
+
+  }
+
+}
+/* ================= MOBILE SERVICES BLOB HIDE ================= */
+
+@media(max-width:768px){
+
+    .u-service-blob{
+
+        display:none;
+
+    }
+
+}
+/* ================= MOBILE FOOTER QUICK LINKS HIDE ================= */
+
+@media(max-width:768px){
+
+  .u-footer-links{
+    display:none;
+  }
+
+}
+/* ================= MOBILE FOOTER CONTACT HIDE ================= */
+
+@media(max-width:768px){
+
+  .u-footer-contact{
+    display:none !important;
+  }
+
+}
