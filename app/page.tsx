@@ -394,7 +394,12 @@ useEffect(()=>{
           );
 
 
-        }else{
+        }
+
+
+        else if(
+          entry.boundingClientRect.top > window.innerHeight
+        ){
 
 
           entry.target.classList.remove(
@@ -420,16 +425,24 @@ useEffect(()=>{
 
 
 
+
+
   const elements =
     document.querySelectorAll("[data-reveal]");
 
 
 
+
+
   elements.forEach((element)=>{
+
 
     observer.observe(element);
 
+
   });
+
+
 
 
 
@@ -441,9 +454,7 @@ useEffect(()=>{
 
   };
 
-
 },[]);
-
  // Generate snow particles
 
 useEffect(()=>{
@@ -930,19 +941,18 @@ useEffect(()=>{
 
 
 
-    {/* HERO */}
+{/* HERO */}
 
 
-    <section
+<section
 
       id="home"
 
       className="u-hero-scroll"
 
+      data-reveal
+
     >
-
-
-
 
       <div
 
@@ -1392,18 +1402,10 @@ useEffect(()=>{
 
 
     <section className="u-about-detail">
-
-
-
       <div
-
         className="u-about-image"
-
         data-reveal
-
       >
-
-
         <Image
 
           src="/images/tharaka-jayasundara.png"
@@ -1419,86 +1421,41 @@ useEffect(()=>{
 
       </div>
 
-
-
-
-
-
-
       <div
-
         className="u-about-copy"
-
         data-reveal
 
       >
-
-
-
         <p className="u-kicker">
 
           01 / WHO I AM
 
         </p>
-
-
-
-
         <h2>
-
-
-          Creative thinking.
-
+          Creative thinking.Practical
           <br/>
-
-
           <span>
-
-            Practical building.
-
+             building.
           </span>
-
-
         </h2>
-
-
-
-
-
         <p>
 
           I'm Tharaka Jayasundara, a developer focused on building web applications, digital products and secure technology solutions.
 
         </p>
-
-
-
-
         <p>
 
           I transform ideas into scalable and user-friendly digital experiences.
 
         </p>
 
-
-
-
-
-
         <a href="#contact">
-
 
           MORE ABOUT ME
 
-
           <ArrowRight size={16}/>
 
-
         </a>
-
-
-
-
 
         <div className="u-experience">
 
@@ -1647,15 +1604,17 @@ useEffect(()=>{
 
 </section>
 
-        {/* ===========TECHNOLOGIES=========== */}
+ {/* ===========TECHNOLOGIES=========== */}
 
-    <section className="u-tech">
-
-
-      <div className="u-tech-header">
+<section className="u-tech">
 
 
-        <p className="u-kicker">
+  <div
+    className="u-tech-header"
+    data-reveal
+  >
+
+    <p className="u-kicker">
 
           01 / TECHNOLOGY STACK
 
@@ -1755,11 +1714,16 @@ useEffect(()=>{
 
 {/* ================= CAPABILITIES ================= */}
 
-<section className="u-capabilities" id="capabilities">
+<section 
+  className="u-capabilities" 
+  id="capabilities"
+>
 
 
-  <div className="u-capabilities-header">
-
+  <div
+    className="u-capabilities-header"
+    data-reveal
+  >
 
     <span className="u-kicker">
       03 / CAPABILITIES
@@ -1804,37 +1768,20 @@ useEffect(()=>{
         <SiNextdotjs className="next-icon" />
 
       </div>
-
-
-
-
       <span className="u-capability-number">
         01
       </span>
-
-
-
-
       <h3>
         WEB DEVELOPMENT
       </h3>
-
-
-
-
       <p>
         Creating modern responsive websites with clean structure,
         optimized performance and user-focused experiences.
       </p>
 
-
-
-
       <small>
         HTML • CSS • JavaScript • React • Next.js
       </small>
-
-
 
     </div>
 
@@ -1874,42 +1821,20 @@ useEffect(()=>{
         02
       </span>
 
-
-
-
-
       <h3>
         FULL STACK DEVELOPMENT
       </h3>
-
-
-
-
 
       <p>
         Building complete web applications with frontend,
         backend systems and database integration.
       </p>
 
-
-
-
-
       <small>
         React • Next.js • Node.js • APIs
       </small>
 
-
-
     </div>
-
-
-
-
-
-
-
-
 
     {/* UI DEVELOPMENT */}
 
@@ -2060,95 +1985,45 @@ useEffect(()=>{
 
         <FaJava className="java-icon" />
 
-
-
       </div>
-
-
-
-
 
       <span className="u-capability-number">
         05
       </span>
-
-
-
-
-
       <h3>
         API & BACKEND
       </h3>
-
-
-
-
-
       <p>
         Developing backend logic, REST APIs and
         server-side solutions.
       </p>
-
-
-
-
-
       <small>
         Node.js • PHP • Java • C#
       </small>
-
-
-
     </div>
-
-
-
-
-
   </div>
-
-
-
 </section>    
+{/* SERVICES */}
 
+<section
 
+  className="u-services"
 
-    {/* SERVICES */}
+  id="services"
 
-
-    <section
-
-      className="u-services"
-
-      id="services"
-
-    >
-
-
-
+>
       <p className="u-kicker light">
 
-        02 / WHAT I DO
+        04 / WHAT I DO
 
       </p>
-
-
-
-
-
       <h2 data-reveal>
 
         SERVICES
 
       </h2>
 
-
-
-
-
-
       <div className="u-service-list">
-
 
         {
           services.map(
@@ -2169,27 +2044,13 @@ useEffect(()=>{
                 data-reveal
 
               >
-
-
-
                 <span>
 
                   {n}
 
                 </span>
-
-
-
-
                 <Icon />
-
-
-
-
-
                 <div>
-
-
                   <h3>
 
                     {title}
@@ -2209,32 +2070,19 @@ useEffect(()=>{
 
                 </div>
 
-
-
-
-
                 <ArrowUpRight
 
                   className="u-service-arrow"
 
                 />
 
-
               </article>
-
 
             )
 
           )
         }
-
-
-
       </div>
-
-
-
-
 
 
       <div className="u-service-blob">
@@ -2258,13 +2106,6 @@ useEffect(()=>{
     </section>
 
 
-
-
-
-
-
-
-
     {/* PROJECTS */}
 
 
@@ -2276,10 +2117,12 @@ useEffect(()=>{
 
     >
 
-<div className="u-works-header">
-
+<div
+  className="u-works-header"
+  
+>
   <span className="u-kicker">
-    03 / SELECTED PROJECTS
+    05 / SELECTED PROJECTS
   </span>
 
     <h2>
@@ -2306,10 +2149,6 @@ useEffect(()=>{
               data-reveal
 
             >
-
-
-
-
               <div
 
                 className={`u-project-screen project-${project.n}`}
@@ -2323,16 +2162,7 @@ useEffect(()=>{
                 }}
 
               >
-
-
-
                 <div className="u-project-overlay"/>
-
-
-
-
-
-
 
                 <div className="u-project-meta">
 
@@ -2343,25 +2173,13 @@ useEffect(()=>{
 
                   </span>
 
-
-
-
                   <span>
 
                     {project.n}
 
                   </span>
 
-
-
                 </div>
-
-
-
-
-
-
-
 
                 <div className="u-project-content">
 
@@ -2372,22 +2190,11 @@ useEffect(()=>{
 
                   </h3>
 
-
-
-
-
-
                   <p>
 
                     {project.description}
 
                   </p>
-
-
-
-
-
-
 
                   <div className="u-project-tags">
 
@@ -2413,13 +2220,6 @@ useEffect(()=>{
 
                   </div>
 
-
-
-
-
-
-
-
                   <a
 
                     href={project.link}
@@ -2441,29 +2241,18 @@ useEffect(()=>{
 
                 </div>
 
-
-
-
-
               </div>
 
-
-
             </article>
-
 
           ))
         }
 
-
       </div>
-
-
 
     </section>
 
 {/* ================= CONTACT ================= */}
-
 
 <section 
 
@@ -2476,7 +2265,7 @@ id="contact"
 
 <p className="u-kicker light">
 
-04 / GET IN TOUCH
+06 / GET IN TOUCH
 
 </p>
 
@@ -2507,10 +2296,6 @@ id="contact"
 
 
   </div>
-
-
-
-
 
   {/* RIGHT FORM */}
 
@@ -2563,15 +2348,9 @@ id="contact"
 
     </div>
 
-
-
-
-
     <label>
       MESSAGE
     </label>
-
-
 
     <textarea
 
@@ -2583,10 +2362,6 @@ id="contact"
 
     />
 
-
-
-
-
     <button
 
       type="submit"
@@ -2594,8 +2369,6 @@ id="contact"
       disabled={sending}
 
     >
-
-
       {
         sending
 
@@ -2607,18 +2380,11 @@ id="contact"
 
         "Send Message →"
       }
-
-
-
     </button>
-
-
 
   </form>
 
-
 </div>
-
 
 </div>
 
@@ -2689,12 +2455,7 @@ id="contact"
 
             </div>
 
-
-
-
-
             {/* LINKS */}
-
 
             <div className="u-footer-links">
 
@@ -2730,11 +2491,6 @@ id="contact"
 
 
             </div>
-
-
-
-
-
 
             {/* CONTACT */}
 
@@ -2931,20 +2687,12 @@ id="contact"
 
                     </a>
 
-
-
                   </div>
 
-
                 )}
-
-
         </div>
-
   </main>
 
-
 );
-
 
 }
