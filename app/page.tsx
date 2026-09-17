@@ -372,7 +372,8 @@ const sendEmail = (e:any)=>{
 
 
 
-// Scroll reveal
+// Scroll Reveal Animation
+
 
 useEffect(()=>{
 
@@ -397,9 +398,7 @@ useEffect(()=>{
         }
 
 
-        else if(
-          entry.boundingClientRect.top > window.innerHeight
-        ){
+        else{
 
 
           entry.target.classList.remove(
@@ -417,7 +416,11 @@ useEffect(()=>{
 
 
     {
-      threshold:0.14
+
+      threshold:0.14,
+
+      rootMargin:"0px 0px -80px 0px"
+
     }
 
 
@@ -428,7 +431,10 @@ useEffect(()=>{
 
 
   const elements =
-    document.querySelectorAll("[data-reveal]");
+
+    document.querySelectorAll(
+      "[data-reveal]"
+    );
 
 
 
@@ -453,6 +459,7 @@ useEffect(()=>{
 
 
   };
+
 
 },[]);
  // Generate snow particles
@@ -1060,65 +1067,74 @@ useEffect(()=>{
 
 
 
-        {/* LEFT */}
+ {/* LEFT */}
 
 
-        <div className="u-hero-left u-rise">
+<div className="u-hero-left u-rise">
 
 
-          <div className="u-role-list">
+  <div className="u-role-list">
 
 
-            <span>
-              PROGRAMMER
-            </span>
+    <span>
+      PROGRAMMER
+    </span>
 
 
-            <span>
-              DESIGNER
-            </span>
+    <span>
+      DESIGNER
+    </span>
 
 
-            <span>
-              DEVELOPER
-            </span>
+    <span>
+      DEVELOPER
+    </span>
 
 
-          </div>
+  </div>
 
 
 
 
-
-          <div className="u-link-row">
-
-
-            <a href="#works">
-
-              PROJECTS
-
-            </a>
+  <div className="u-link-row">
 
 
-            <a href="#about">
+    <a href="#works">
 
-              ABOUT ME
+      PROJECTS
 
-            </a>
-
-
-          </div>
+    </a>
 
 
-        </div>
+    <a href="#about">
+
+      ABOUT ME
+
+    </a>
+
+
+  </div>
 
 
 
 
 
+  <a
+
+    href="/Tharaka_Jayasundara_CV.pdf"
+
+    download
+
+    className="u-cv-button"
+
+  >
+
+    DOWNLOAD CV
+
+  </a>
 
 
-
+</div>
 
         {/* IMAGE */}
 
@@ -1150,7 +1166,7 @@ useEffect(()=>{
 
 
 
-        {/* STATS */}
+        {/* STATS Cards*/}
 
 
         <div className="u-hero-right u-rise delay-2">
@@ -1176,10 +1192,6 @@ useEffect(()=>{
 
 
           </div>
-
-
-
-
 
           <div className="stat-card">
 
@@ -1391,13 +1403,6 @@ useEffect(()=>{
     </section>
 
 
-
-
-
-
-
-
-
     {/* ABOUT DETAIL */}
 
 
@@ -1456,6 +1461,8 @@ useEffect(()=>{
           <ArrowRight size={16}/>
 
         </a>
+        <br/>
+
 
         <div className="u-experience">
 
@@ -2106,151 +2113,216 @@ useEffect(()=>{
     </section>
 
 
-    {/* PROJECTS */}
+ {/* PROJECTS */}
 
 
-    <section
+<section
 
-      className="u-works"
+  className="u-works"
 
-      id="works"
+  id="works"
 
-    >
-
-<div
-  className="u-works-header"
-  
 >
+
+
+<div 
+  className="u-works-header"
+>
+
   <span className="u-kicker">
     05 / SELECTED PROJECTS
   </span>
 
-    <h2>
-      WOR
-      <span>
-        KS
-      </span>
-    </h2>
 
-  </div>
-      <div className="u-projects">
+  <h2>
+    WOR
+    <span>
+      KS
+    </span>
+  </h2>
 
 
-        {
-          projects.map((project)=>(
+</div>
 
 
-            <article
 
-              key={project.title}
+<div className="u-projects">
 
-              className="u-project"
 
-              data-reveal
+{
+  projects.map((project)=>(
 
-            >
-              <div
 
-                className={`u-project-screen project-${project.n}`}
+    <article
 
-                style={{
+      key={project.title}
 
-                  backgroundImage:
+      className="u-project"
 
-                  `url(${project.image})`
+      data-reveal
 
-                }}
+    >
+
+
+      <div
+
+        className={`u-project-screen project-${project.n}`}
+
+        style={{
+
+          backgroundImage:
+
+          `url(${project.image})`
+
+        }}
+
+      >
+
+
+        <div className="u-project-overlay"/>
+
+
+
+        <div className="u-project-meta">
+
+
+          <span>
+
+            {project.category}
+
+          </span>
+
+
+          <span>
+
+            {project.n}
+
+          </span>
+
+
+        </div>
+
+
+
+
+        <div className="u-project-content">
+
+
+          <h3>
+
+            {project.title}
+
+          </h3>
+
+
+
+          <p>
+
+            {project.description}
+
+          </p>
+
+
+
+
+          <div className="u-project-tags">
+
+
+          {
+
+            project.tags.map((tag)=>(
+
+
+              <span
+
+                key={tag}
 
               >
-                <div className="u-project-overlay"/>
 
-                <div className="u-project-meta">
-
-
-                  <span>
-
-                    {project.category}
-
-                  </span>
-
-                  <span>
-
-                    {project.n}
-
-                  </span>
-
-                </div>
-
-                <div className="u-project-content">
+                {tag}
 
 
-                  <h3>
-
-                    {project.title}
-
-                  </h3>
-
-                  <p>
-
-                    {project.description}
-
-                  </p>
-
-                  <div className="u-project-tags">
+              </span>
 
 
-                    {
-                      project.tags.map((tag)=>(
+            ))
+
+          }
 
 
-                        <span
-
-                          key={tag}
-
-                        >
-
-                          {tag}
-
-                        </span>
-
-
-                      ))
-                    }
-
-
-                  </div>
-
-                  <a
-
-                    href={project.link}
-
-                    target="_blank"
-
-                    rel="noopener noreferrer"
-
-                    className="u-project-button"
-
-                  >
-
-                    EXPLORE PROJECT
-
-
-                  </a>
+          </div>
 
 
 
-                </div>
 
-              </div>
+          <a
 
-            </article>
+            href={project.link}
 
-          ))
-        }
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            className="u-project-button"
+
+          >
+
+            EXPLORE PROJECT
+
+
+          </a>
+
+
+
+
+        </div>
+
 
       </div>
 
-    </section>
+
+    </article>
+
+
+  ))
+}
+
+
+
+</div>
+
+
+
+
+
+{/* DOWNLOAD CV */}
+
+
+<div 
+  className="u-works-cv"
+  data-reveal
+>
+
+
+<a
+
+  href="/Tharaka_Jayasundara_CV.pdf"
+
+  download
+
+  className="u-cv-button"
+
+>
+
+  DOWNLOAD CV 
+
+
+</a>
+
+
+</div>
+
+</section>
 
 {/* ================= CONTACT ================= */}
 

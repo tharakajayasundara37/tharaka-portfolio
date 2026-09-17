@@ -845,7 +845,13 @@ body {
 
 
 }
+.u-link-row .u-cv-button{
 
+  margin-top:0;
+
+  padding:16px 40px;
+
+}
 
 
 .u-link-row a {
@@ -961,11 +967,6 @@ body {
 
 
 }
-
-
-
-
-
 
 
 .stat-card:nth-child(1):hover {
@@ -6184,5 +6185,156 @@ to{
   box-shadow:
 
   0 25px 60px rgba(0,0,0,.12);
+
+}
+/* ================= DOWNLOAD CV BUTTON ================= */
+
+
+.u-cv-button{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+
+  padding:
+
+  18px 45px;
+
+
+  border-radius:
+
+  50px;
+
+
+  background:
+
+  linear-gradient(
+
+    135deg,
+
+    #111 0%,
+
+    #000 45%,
+
+    #1c1c1c 100%
+
+  );
+
+
+  color:#fff;
+
+
+  text-decoration:none;
+
+
+  font-size:14px;
+
+
+  font-weight:900;
+
+
+  letter-spacing:.12em;
+
+
+  font-style:normal;
+
+
+  border:
+
+  1px solid rgba(255,255,255,.15);
+
+
+
+  box-shadow:
+
+  0 15px 35px rgba(0,0,0,.35),
+
+  inset 0 1px 0 rgba(255,255,255,.15);
+
+
+
+  transition:
+
+  .35s ease;
+
+}
+
+
+
+
+
+.u-cv-button:hover{
+
+
+  transform:
+
+  translateY(-6px);
+
+
+
+  background:
+
+  linear-gradient(
+
+    135deg,
+
+    #0099cc,
+
+    #00b7e8
+
+  );
+
+
+
+  color:white;
+
+
+
+  box-shadow:
+
+  0 20px 45px rgba(0,153,204,.45),
+
+  inset 0 1px 0 rgba(255,255,255,.35);
+
+
+}
+
+
+
+
+
+/* WORKS SECTION CV POSITION */
+
+
+.u-works-cv{
+
+
+  margin-top:70px;
+
+
+  display:flex;
+
+
+  justify-content:center;
+
+
+  align-items:center;
+
+
+}
+/* HERO DOWNLOAD CV ONLY */
+
+.u-hero-left .u-cv-button{
+
+  position:relative;
+
+  top:50px;
+
+  left:1px;
+
+  z-index:5;
 
 }
