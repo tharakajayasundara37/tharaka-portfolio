@@ -149,7 +149,7 @@ const projects = [
     ],
 
     link:
-    "https://github.com/tharakajayasundara37/MediCare-Appointment-App",
+    "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated",
   },
 
 ];
