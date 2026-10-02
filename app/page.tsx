@@ -2,7 +2,8 @@
 
 import {
   FaAws,
-  FaLinkedin
+  FaLinkedin,
+  FaWhatsapp
 } from "react-icons/fa";
 
 import { IconType } from "react-icons";
@@ -34,7 +35,8 @@ import {
   SiCss,
   SiVercel,
   SiPhp,
-  SiFigma
+  SiFigma,
+  SiGmail
 } from "react-icons/si";
 
 
@@ -56,33 +58,46 @@ import {
 } from "lucide-react";
 
 const services = [
-
   {
-    n:"01",
-    title:"Web Development",
-    text:"Fast, responsive and modern websites built for real people.",
-    icon:Code2,
+    n: "01",
+    title: "WEB DEVELOPMENT",
+    text: "Fast, responsive and modern websites built for real people.",
+    tags: ["NEXT.JS", "REACT", "FULL STACK"],
+    image: "/images/welfare.png",
   },
 
-
   {
-    n:"02",
-    title:"Mobile Applications",
-    text:"Useful Android experiences with clean interfaces.",
-    icon:Smartphone,
+    n: "02",
+    title: "MOBILE APPLICATIONS",
+    text: "Useful Android experiences with clean interfaces.",
+    tags: ["KOTLIN", "ANDROID", "FIREBASE"],
+    image: "/images/medicare.jpg",
   },
 
-
   {
-    n:"03",
-    title:"Backend Systems",
-    text:"Reliable APIs, databases and complete platforms.",
-    icon:Database,
+    n: "03",
+    title: "BACKEND SYSTEMS",
+    text: "Reliable APIs, databases and complete platforms.",
+    tags: ["NODE.JS", "MYSQL", "MONGODB"],
+    image: "/images/news-blog.png",
   },
 
+  {
+    n: "04",
+    title: "UI / UX DESIGN",
+    text: "Modern interface concepts and user experience designs created in Figma.",
+    tags: ["FIGMA", "UI DESIGN", "UX DESIGN"],
+    image: "/images/figma-design.jpg",
+  },
+
+  {
+    n: "05",
+    title: "GLOBALVISTA APP DEVELOPMENT",
+    text: "A React Native web and mobile application currently in active development.",
+    tags: ["REACT NATIVE", "WEB APP", "MOBILE APP"],
+    image: "/images/globalvista.jpg",
+  },
 ];
-
-
 
 
 
@@ -152,12 +167,55 @@ const projects = [
     "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated",
   },
 
+
+  {
+    n:"04",
+    title:"Japolic UI / UX Design",
+
+    category:"FIGMA DESIGN",
+
+    description:
+    "A modern web interface design created in Figma with a strong focus on clean layouts, usability and visual experience.",
+
+    image:"/images/figma-design.jpg",
+
+    tags:[
+      "FIGMA",
+      "WEB DESIGN",
+      "MOBILE DESIGN",
+    ],
+
+    status:"DESIGN",
+
+    link:
+    "https://www.figma.com/design/U8s5MWJdLAkC5MUCFg1oqw/Japolic-%E2%80%94-Web-Design-Assessment?node-id=2-68&t=Ri5yYplBqXdmLERL-1",
+  },
+
+
+  {
+    n:"05",
+    title:"GlobalVista",
+
+    category:"WEB & MOBILE APPLICATION",
+
+    description:
+    "A React Native web and mobile application currently under active development, focused on delivering a modern cross-platform experience.",
+
+    image:"/images/globalvista.jpg",
+
+    tags:[
+      "REACT NATIVE",
+      "WEB APP",
+      "MOBILE APP",
+    ],
+
+    status:"IN PROGRESS",
+
+    link:
+    "https://github.com/tharakajayasundara37/GlobalVista",
+  },
+
 ];
-
-
-
-
-
 
 const technologies:{
   name:string;
@@ -630,7 +688,65 @@ useEffect(()=>{
 
   },[]);
 
+useEffect(() => {
 
+  const rows =
+    document.querySelectorAll(
+      ".u-service-showcase-row"
+    );
+
+
+  const observer =
+    new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if(entry.isIntersecting){
+
+            rows.forEach((row) =>
+              row.classList.remove(
+                "is-active"
+              )
+            );
+
+
+            entry.target.classList.add(
+              "is-active"
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        root:null,
+
+        /*
+          viewport center area
+          ekata row eka enakota active
+        */
+        rootMargin:
+          "-32% 0px -32% 0px",
+
+        threshold:.05
+      }
+
+    );
+
+
+  rows.forEach((row) =>
+    observer.observe(row)
+  );
+
+
+  return () =>
+    observer.disconnect();
+
+},[]);
 
 
 // Generate snow particles
@@ -1060,79 +1176,55 @@ useEffect(()=>{
 
         </div>
 
-
-
-
-
-
-
-
- {/* LEFT */}
-
+{/* LEFT */}
 
 <div className="u-hero-left u-rise">
 
+  <div className="u-left-card">
 
-  <div className="u-role-list">
-
-
-    <span>
-      PROGRAMMER
+    <span className="u-left-card-label">
+      HELLO! I'M THARAKA
     </span>
 
+    <div className="u-role-list">
 
-    <span>
-      DESIGNER
-    </span>
+      <span>
+        PROGRAMMER
+      </span>
 
+      <span>
+        DESIGNER
+      </span>
 
-    <span>
-      DEVELOPER
-    </span>
+      <span>
+        DEVELOPER
+      </span>
 
+    </div>
 
   </div>
-
-
 
 
   <div className="u-link-row">
 
-
     <a href="#works">
-
       PROJECTS
-
     </a>
-
 
     <a href="#about">
-
       ABOUT ME
-
     </a>
-
 
   </div>
 
 
-
-
-
   <a
-
     href="/Tharaka_Jayasundara_CV.pdf"
-
     download
-
     className="u-cv-button"
-
   >
-
     DOWNLOAD CV
-
   </a>
-
 
 </div>
 
@@ -1242,45 +1334,9 @@ useEffect(()=>{
 
 
         </div>
-
-
-
-
-
-
-
-
-        <div className="u-scroll-label">
-
-
-          SCROLL TO EXPLORE
-
-
-          <ArrowDown size={13}/>
-
-
-        </div>
-
-        <a
-
-          href="#about"
-
-          className="u-float-arrow"
-
-        >
-
-          <ArrowDown size={18}/>
-
-        </a>
-
-
-
-
       </div>
 
-
     </section>
-
 
     {/* MARQUEE */}
 
@@ -1300,10 +1356,6 @@ useEffect(()=>{
         UI/UX DESIGN ✦
 
         BACKEND SYSTEMS ✦
-
-        CLOUD SOLUTIONS ✦
-
-        CYBER SECURITY ✦
 
 
       </div>
@@ -1462,32 +1514,6 @@ useEffect(()=>{
 
         </a>
         <br/>
-
-
-        <div className="u-experience">
-
-
-          <b>
-
-            IT
-
-          </b>
-
-
-          <span>
-
-            Developer
-
-            <br/>
-
-            Engineer
-
-          </span>
-
-
-        </div>
-
-
 
       </div>
 
@@ -2010,108 +2036,90 @@ useEffect(()=>{
     </div>
   </div>
 </section>    
-{/* SERVICES */}
+
+{/* ================= SERVICES ================= */}
 
 <section
-
-  className="u-services"
-
+  className="u-services-showcase"
   id="services"
-
 >
-      <p className="u-kicker light">
 
-        04 / WHAT I DO
+  {/* MOVING SERVICES TITLE */}
+  <div className="u-services-marquee">
 
-      </p>
-      <h2 data-reveal>
+    <div className="u-services-marquee-track">
 
-        SERVICES
+      <span>SERVICES</span>
+      <b>—</b>
 
-      </h2>
+      <span className="solid">SERVICES</span>
+      <b>—</b>
 
-      <div className="u-service-list">
+      <span>SERVICES</span>
+      <b>—</b>
 
-        {
-          services.map(
+      <span className="solid">SERVICES</span>
+      <b>—</b>
 
-            ({
-              n,
-              title,
-              text,
-              icon:Icon
+    </div>
 
-            })=>(
+  </div>
 
 
-              <article
+  {/* SERVICE ROWS */}
+  <div className="u-services-showcase-list">
 
-                key={title}
+    {services.map((service) => (
 
-                data-reveal
+      <article
+        className="u-service-showcase-row"
+        key={service.title}
+      >
 
-              >
-                <span>
-
-                  {n}
-
-                </span>
-                <Icon />
-                <div>
-                  <h3>
-
-                    {title}
-
-                  </h3>
+        <span className="u-service-showcase-number">
+          {service.n}
+        </span>
 
 
+        <div className="u-service-showcase-content">
+
+          <h3>
+            {service.title}
+          </h3>
+
+          <div className="u-service-showcase-tags">
+
+            {service.tags.map((tag) => (
+              <span key={tag}>
+                {tag}
+              </span>
+            ))}
+
+          </div>
+
+          <p>
+            {service.text}
+          </p>
+
+        </div>
 
 
-                  <p>
+        <div className="u-service-showcase-image">
 
-                    {text}
+          <img
+            src={service.image}
+            alt={service.title}
+          />
 
-                  </p>
+        </div>
 
+      </article>
 
+    ))}
 
-                </div>
+  </div>
 
-                <ArrowUpRight
-
-                  className="u-service-arrow"
-
-                />
-
-              </article>
-
-            )
-
-          )
-        }
-      </div>
-
-
-      <div className="u-service-blob">
-
-
-        CREATE
-
-        <br/>
-
-        BUILD
-
-        <br/>
-
-        GROW
-
-
-      </div>
-
-
-
-    </section>
-
+</section>
 
  {/* PROJECTS */}
 
@@ -2651,117 +2659,61 @@ id="contact"
 
                 </button>
 
+        {contactOpen && (
+
+          <div className="contact-menu">
+
+            <a
+              href="https://github.com/tharakajayasundara37"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiGithub className="contact-icon github-icon" />
+              <span>GitHub</span>
+            </a>
 
 
+            <a
+              href="https://www.linkedin.com/in/tharaka-jayasundara-4ab1813ba/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="contact-icon linkedin-icon" />
+              <span>LinkedIn</span>
+            </a>
 
 
-                {contactOpen && (
+            <a
+              href="https://vercel.com/tharakajayasundara37s-projects"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiVercel className="contact-icon vercel-icon" />
+              <span>Vercel</span>
+            </a>
 
 
-                  <div className="contact-menu">
+            <a
+              href="mailto:tharakajayasundara37@gmail.com"
+            >
+              <SiGmail className="contact-icon gmail-icon" />
+              <span>Email</span>
+            </a>
 
 
-                    <a
+            <a
+              href="https://wa.me/94743153951"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="contact-icon whatsapp-icon" />
+              <span>WhatsApp</span>
+            </a>
 
-                      href="https://github.com/tharakajayasundara37"
+          </div>
 
-                      target="_blank"
-
-                      rel="noopener noreferrer"
-
-                    >
-
-                      <SiGithub />
-
-                      <span>
-                        GitHub
-                      </span>
-
-                    </a>
-
-
-
-
-
-                    <a
-
-                      href="https://www.linkedin.com/in/tharaka-jayasundara-4ab1813ba/"
-
-                      target="_blank"
-
-                      rel="noopener noreferrer"
-
-                    >
-
-                      <FaLinkedin />
-
-                      <span>
-                        LinkedIn
-                      </span>
-
-                    </a>
-
-
-
-
-
-                    <a
-
-                      href="https://vercel.com/tharakajayasundara37s-projects"
-
-                      target="_blank"
-
-                      rel="noopener noreferrer"
-
-                    >
-
-                      <SiVercel />
-
-                      <span>
-                        Vercel
-                      </span>
-
-                    </a>
-
-
-
-
-
-                    <a
-
-                      href="mailto:tharakajayasundara37@gmail.com"
-
-                    >
-
-                      <Mail />
-
-                      <span>
-                        Email
-                      </span>
-
-                    </a>
-
-
-
-
-
-                    <a
-
-                      href="tel:+94743153951"
-
-                    >
-
-                      <Phone />
-
-                      <span>
-                        Call
-                      </span>
-
-                    </a>
-
-                  </div>
-
-                )}
+        )}
+        
         </div>
   </main>
 
