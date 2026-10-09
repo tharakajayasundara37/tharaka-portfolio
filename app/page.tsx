@@ -2292,7 +2292,7 @@ useEffect(()=>{
               href={project.liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="u-project-button"
+              className="u-project-button u-project-download"
               aria-label={`View ${project.title} live project`}
             >
               LIVE PROJECT
