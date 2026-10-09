@@ -165,6 +165,8 @@ const projects = [
 
     link:
     "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated",
+    apkDownload:
+    "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated/releases/download/v1.0.0-cv-demo/MediCare-Appointment-App.apk",
   },
 
 
@@ -2263,6 +2265,7 @@ useEffect(()=>{
 
 
 
+          <div className="u-project-actions">
           <a
 
             href={project.link}
@@ -2279,6 +2282,18 @@ useEffect(()=>{
 
 
           </a>
+
+          {project.apkDownload && (
+            <a
+              href={project.apkDownload}
+              className="u-project-button u-project-download"
+              aria-label={`Download ${project.title} APK`}
+            >
+              <ArrowDown size={18} aria-hidden="true" />
+              DOWNLOAD APK
+            </a>
+          )}
+          </div>
 
 
 

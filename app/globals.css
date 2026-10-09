@@ -3523,6 +3523,28 @@ body {
 
 
 
+.u-project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.u-project-actions .u-project-button {
+  flex: 1 1 180px;
+  width: auto;
+  gap: 8px;
+}
+
+.u-project-button.u-project-download {
+  background: #c7ff6b;
+  color: #111;
+}
+
+.u-project-button.u-project-download:hover {
+  background: #a8e84c;
+  color: #111;
+}
+
 .u-project-button {
 
 
