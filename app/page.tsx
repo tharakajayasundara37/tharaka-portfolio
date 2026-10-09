@@ -120,6 +120,8 @@ const projects = [
     ],
 
     link:
+    "https://github.com/tharakajayasundara37/welfare-system",
+    liveLink:
     "https://welfare-system-navy.vercel.app/",
   },
 
@@ -142,6 +144,8 @@ const projects = [
     ],
 
     link:
+    "https://github.com/tharakajayasundara37/NewsBlogManagement-Laravel",
+    liveLink:
     "https://news-blog-management-laravel.vercel.app/",
   },
 
@@ -2282,6 +2286,30 @@ useEffect(()=>{
 
 
           </a>
+
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="u-project-button"
+              aria-label={`View ${project.title} live project`}
+            >
+              LIVE PROJECT
+            </a>
+          )}
+
+          {project.status === "IN PROGRESS" && (
+            <button
+              type="button"
+              className="u-project-button"
+              disabled
+              aria-label={`${project.title} live project is in development`}
+              style={{ opacity: 0.65, cursor: "not-allowed" }}
+            >
+              IN DEVELOPMENT
+            </button>
+          )}
 
           {project.apkDownload && (
             <a
