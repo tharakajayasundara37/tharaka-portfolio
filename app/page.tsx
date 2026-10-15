@@ -111,7 +111,7 @@ const projects = [
     description:
     "A modern welfare management system to manage users, services and digital workflows efficiently.",
 
-    image:"/images/welfare-figma-design.jpg",
+    image:"/images/welfare.png",
 
     tags:[
       "NEXT.JS",
@@ -123,13 +123,33 @@ const projects = [
     "https://github.com/tharakajayasundara37/welfare-system",
     liveLink:
     "https://welfare-system-navy.vercel.app/",
-    figmaLink:
-    "https://www.figma.com/design/G2YfK5FweeJhzfzDt1T0Mh/WelfareX-%E2%80%94-Existing-UI-Screens?node-id=41-119&t=kg85OT2ocdda2SAT-1",
   },
 
 
   {
     n:"02",
+    title:"WelfareX UI / UX Design",
+    category:"FIGMA DESIGN",
+
+    description:
+    "A modern interface design for the WelfareX management platform, focused on clear workflows, usability and a consistent visual experience.",
+
+    image:"/images/welfare-figma-design.jpg",
+
+    tags:[
+      "FIGMA",
+      "UI DESIGN",
+      "UX DESIGN",
+    ],
+
+    link:
+    "https://www.figma.com/design/G2YfK5FweeJhzfzDt1T0Mh/WelfareX-%E2%80%94-Existing-UI-Screens?node-id=41-119&t=kg85OT2ocdda2SAT-1",
+    actionLabel:"FIGMA DESIGN",
+  },
+
+
+  {
+    n:"03",
     title:"News Blog",
     category:"FULL STACK PROJECT",
 
@@ -153,7 +173,7 @@ const projects = [
 
 
   {
-    n:"03",
+    n:"04",
     title:"MediCare Appointment App",
 
     category:"MOBILE APPLICATION",
@@ -177,7 +197,7 @@ const projects = [
 
 
   {
-    n:"04",
+    n:"05",
     title:"Japolic UI / UX Design",
 
     category:"FIGMA DESIGN",
@@ -201,7 +221,7 @@ const projects = [
 
 
   {
-    n:"05",
+    n:"06",
     title:"GlobalVista",
 
     category:"WEB & MOBILE APPLICATION",
@@ -2146,7 +2166,7 @@ useEffect(()=>{
 >
 
   <span className="u-kicker">
-    05 / SELECTED PROJECTS
+    06 / SELECTED PROJECTS
   </span>
 
 
@@ -2284,7 +2304,7 @@ useEffect(()=>{
 
           >
 
-            EXPLORE PROJECT
+            {project.actionLabel ?? "EXPLORE PROJECT"}
 
 
           </a>
@@ -2298,18 +2318,6 @@ useEffect(()=>{
               aria-label={`View ${project.title} live project`}
             >
               LIVE PROJECT
-            </a>
-          )}
-
-          {project.figmaLink && (
-            <a
-              href={project.figmaLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="u-project-button u-project-download"
-              aria-label={`View ${project.title} Figma design`}
-            >
-              FIGMA DESIGN
             </a>
           )}
 
