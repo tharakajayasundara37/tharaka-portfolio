@@ -87,7 +87,7 @@ const services = [
     title: "UI / UX DESIGN",
     text: "Modern interface concepts and user experience designs created in Figma.",
     tags: ["FIGMA", "UI DESIGN", "UX DESIGN"],
-    image: "/images/figma-design.jpg",
+    image: "/images/welfare-figma-design.jpg",
   },
 
   {
@@ -111,7 +111,7 @@ const projects = [
     description:
     "A modern welfare management system to manage users, services and digital workflows efficiently.",
 
-    image:"/images/welfare.png",
+    image:"/images/welfare-figma-design.jpg",
 
     tags:[
       "NEXT.JS",
@@ -123,6 +123,8 @@ const projects = [
     "https://github.com/tharakajayasundara37/welfare-system",
     liveLink:
     "https://welfare-system-navy.vercel.app/",
+    figmaLink:
+    "https://www.figma.com/design/G2YfK5FweeJhzfzDt1T0Mh/WelfareX-%E2%80%94-Existing-UI-Screens?node-id=41-119&t=kg85OT2ocdda2SAT-1",
   },
 
 
@@ -2296,6 +2298,18 @@ useEffect(()=>{
               aria-label={`View ${project.title} live project`}
             >
               LIVE PROJECT
+            </a>
+          )}
+
+          {project.figmaLink && (
+            <a
+              href={project.figmaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="u-project-button u-project-download"
+              aria-label={`View ${project.title} Figma design`}
+            >
+              FIGMA DESIGN
             </a>
           )}
 
