@@ -2635,6 +2635,7 @@ id="contact"
                   href="https://github.com/tharakajayasundara37"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub profile"
                 >
                   <SiGithub />
                 </a>
@@ -2645,6 +2646,7 @@ id="contact"
                   href="https://www.linkedin.com/in/tharaka-jayasundara-4ab1813ba/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
                 >
                   <FaLinkedin />
                 </a>
@@ -2655,6 +2657,7 @@ id="contact"
                   href="https://vercel.com/tharakajayasundara37s-projects"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Vercel deployments"
                 >
                   <SiVercel />
                 </a>
@@ -2704,7 +2707,7 @@ id="contact"
 
             </span>
 
-            <a href="#home">
+            <a href="#home" aria-label="Scroll back to top">
 
               BACK TO TOP ↑
             </a>
