@@ -436,49 +436,39 @@ export default function HomePage(){
 const form = useRef<HTMLFormElement>(null);
 
 const [sending,setSending] = useState(false);
+const [statusMessage, setStatusMessage] = useState<{
+  type: "success" | "error";
+  text: string;
+} | null>(null);
 
-
-const sendEmail = (e:any)=>{
-
+const sendEmail = (e: React.FormEvent<HTMLFormElement>)=>{
   e.preventDefault();
-
   setSending(true);
-
+  setStatusMessage(null);
 
   emailjs.sendForm(
-
-    "service_ukx97ce",
-
-    "template_n94c84u",
-
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_ukx97ce",
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_n94c84u",
     form.current!,
-
-    "324MNf10hepHk3XZ2"
-
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "324MNf10hepHk3XZ2"
   )
-
   .then(()=>{
-
-    alert("Message sent successfully!");
-
+    setStatusMessage({
+      type: "success",
+      text: "Message sent successfully! I'll get back to you soon.",
+    });
     form.current?.reset();
-
   })
-
   .catch((error)=>{
-
-    console.log(error);
-
-    alert("Message failed!");
-
+    console.error("EmailJS Error:", error);
+    setStatusMessage({
+      type: "error",
+      text: "Failed to send message. Please try again or reach out directly via tharakajayasundara37@gmail.com",
+    });
   })
-
   .finally(()=>{
-
     setSending(false);
-
   });
-
 };
 
   const [snowflakes,setSnowflakes] =
@@ -595,7 +585,7 @@ useEffect(()=>{
 
 
       {
-        length:180
+        length:40
       },
 
 
@@ -1085,33 +1075,21 @@ useEffect(()=>{
         open && (
 
           <div className="u-mobile-new">
-
-
-            <a href="#home">
+            <a href="#home" onClick={()=>setOpen(false)}>
               HOME
             </a>
-
-
-            <a href="#about">
+            <a href="#about" onClick={()=>setOpen(false)}>
               ABOUT
             </a>
-
-
-            <a href="#services">
+            <a href="#services" onClick={()=>setOpen(false)}>
               SERVICES
             </a>
-
-
-            <a href="#works">
+            <a href="#works" onClick={()=>setOpen(false)}>
               WORKS
             </a>
-
-
-            <a href="#contact">
+            <a href="#contact" onClick={()=>setOpen(false)}>
               CONTACT
             </a>
-
-
           </div>
 
         )
@@ -1362,7 +1340,7 @@ useEffect(()=>{
 
               <br/>
 
-              DEVELOP
+              COMPLETED
 
             </span>
 
@@ -1548,11 +1526,11 @@ useEffect(()=>{
       >
         <p className="u-kicker">
 
-          01 / WHO I AM
+          01 / ABOUT ME
 
         </p>
         <h2>
-          Creative thinking.Practical
+          Creative thinking. Practical
           <br/>
           <span>
              building.
@@ -1596,7 +1574,7 @@ useEffect(()=>{
 
 
     <span className="u-kicker">
-      01 / WHO I AM
+      02 / BACKGROUND & EDUCATION
     </span>
 
 
@@ -1712,7 +1690,7 @@ useEffect(()=>{
 
     <p className="u-kicker">
 
-          01 / TECHNOLOGY STACK
+          03 / TECHNOLOGY STACK
 
         </p>
 
@@ -1720,7 +1698,7 @@ useEffect(()=>{
 
             <h2>
 
-              Tools and <span> technologies use.</span>
+              Tools and <span> technologies I use.</span>
 
             </h2>
 
@@ -1822,7 +1800,7 @@ useEffect(()=>{
   >
 
     <span className="u-kicker">
-      03 / CAPABILITIES
+      04 / CAPABILITIES
     </span>
 
 
@@ -2201,7 +2179,7 @@ useEffect(()=>{
 >
 
   <span className="u-kicker">
-    06 / SELECTED PROJECTS
+    05 / SELECTED PROJECTS
   </span>
 
 
@@ -2263,19 +2241,17 @@ useEffect(()=>{
 
 
       <div
-
         className={`u-project-screen project-${project.n}`}
-
-        style={{
-
-          backgroundImage:
-
-          `url(${project.image})`
-
-        }}
-
       >
-
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="u-project-bg-img"
+          style={{ objectFit: "cover" }}
+          priority={project.n === "01" || project.n === "02"}
+        />
 
         <div className="u-project-overlay"/>
 

@@ -3042,6 +3042,56 @@ body {
 }
 
 /* ================= WORKS ================= */
+
+/* ================= POLISH: PROJECT IMAGE & STATUS ================= */
+
+.u-project-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.u-project:hover .u-project-bg-img {
+  transform: scale(1.06);
+}
+
+.u-form-status {
+  margin-top: 18px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  animation: statusSlideIn 0.3s ease;
+}
+
+.u-form-status.success {
+  background: rgba(199, 255, 24, 0.12);
+  border: 1.5px solid var(--lime, #c7ff18);
+  color: #c7ff18;
+}
+
+.u-form-status.error {
+  background: rgba(255, 77, 10, 0.12);
+  border: 1.5px solid var(--orange, #ff4d0a);
+  color: #ff703a;
+}
+
+@keyframes statusSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ================= WORKS FILTER TABS ================= */
 
 .u-works-filters {
