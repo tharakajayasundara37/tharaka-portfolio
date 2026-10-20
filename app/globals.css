@@ -4140,8 +4140,9 @@ body {
 /* ================= BRAND ================= */
 
 .u-footer-brand {
-  flex: 0 1 420px;
-  max-width: 440px;
+  width: 100%;
+  max-width: 420px;
+  flex: 0 1 auto;
 }
 
 .u-footer-brand h3 {
@@ -4241,6 +4242,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 130px;
+  flex: 0 0 auto;
 }
 
 .u-footer-links a,
@@ -6881,40 +6883,64 @@ html, body {
 
 /* 10. Footer Section (Tablet & Mobile Responsiveness - Horizontal Sets) */
 @media (max-width: 900px) {
+  .u-footer {
+    margin-top: 50px !important;
+    padding-top: 36px !important;
+  }
+
   .u-footer-grid {
     flex-direction: column !important;
-    gap: 36px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 30px !important;
+    height: auto !important;
   }
 
   .u-footer-brand {
     width: 100% !important;
     max-width: 100% !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
   }
 
   .u-footer-sets {
     width: 100% !important;
     justify-content: flex-start !important;
-    gap: clamp(40px, 8vw, 80px) !important;
+    gap: clamp(36px, 8vw, 70px) !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
+  }
+
+  .u-footer-links,
+  .u-footer-contact {
+    min-width: 120px !important;
+    flex: 0 0 auto !important;
   }
 }
 
 @media (max-width: 768px) {
   .u-footer {
-    margin-top: 50px !important;
-    padding-top: 32px !important;
+    margin-top: 36px !important;
+    padding-top: 24px !important;
     width: 100% !important;
+    height: auto !important;
   }
 
   .u-footer-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 32px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
     width: 100% !important;
+    height: auto !important;
   }
 
   .u-footer-brand {
     width: 100% !important;
     max-width: 100% !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
     text-align: left !important;
   }
 
@@ -6922,6 +6948,7 @@ html, body {
     font-size: 26px !important;
     letter-spacing: 0.1em !important;
     margin: 0 0 10px !important;
+    line-height: 1 !important;
   }
 
   .u-footer-brand p {
@@ -6929,10 +6956,11 @@ html, body {
     line-height: 1.6 !important;
     color: #999999 !important;
     max-width: 100% !important;
+    margin: 0 !important;
   }
 
   .u-footer-social {
-    margin-top: 18px !important;
+    margin-top: 16px !important;
     gap: 12px !important;
     justify-content: flex-start !important;
   }
@@ -6942,22 +6970,24 @@ html, body {
     height: 38px !important;
   }
 
-  /* THE TWO SETS STAY HORIZONTAL (SIDE-BY-SIDE) ON MOBILE */
+  /* THE TWO SETS STAY HORIZONTAL (SIDE-BY-SIDE) WITH BALANCED SPACING */
   .u-footer-sets {
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
     justify-content: flex-start !important;
-    gap: clamp(24px, 8vw, 48px) !important;
+    gap: clamp(32px, 10vw, 64px) !important;
     width: 100% !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
   }
 
   .u-footer-links,
   .u-footer-contact {
     display: flex !important;
     flex-direction: column !important;
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
+    flex: 0 0 auto !important;
+    min-width: 110px !important;
   }
 
   .u-footer-links h4,
@@ -6984,13 +7014,14 @@ html, body {
   }
 
   .u-footer-bottom {
-    margin-top: 36px !important;
-    padding: 22px 0 45px !important;
+    margin-top: 28px !important;
+    padding: 20px 0 95px !important; /* Generous bottom clearance for floating LET'S TALK pill and browser navigation bars */
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     text-align: center !important;
+    width: 100% !important;
   }
 
   .u-footer-bottom span,
