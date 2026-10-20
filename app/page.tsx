@@ -2318,57 +2318,90 @@ useEffect(()=>{
 
 
           <div className="u-project-actions">
-          <a
+            {project.liveLink ? (
+              <>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="u-project-button u-btn-secondary"
+                  aria-label={`View ${project.title} source code on GitHub`}
+                >
+                  <SiGithub size={15} />
+                  <span>CODE</span>
+                </a>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="u-project-button u-btn-primary"
+                  aria-label={`View ${project.title} live demo`}
+                >
+                  <span>LIVE DEMO</span>
+                  <ArrowUpRight size={15} />
+                </a>
+              </>
+            ) : project.apkDownload ? (
+              <>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="u-project-button u-btn-secondary"
+                  aria-label={`View ${project.title} source code on GitHub`}
+                >
+                  <SiGithub size={15} />
+                  <span>CODE</span>
+                </a>
+                <a
+                  href={project.apkDownload}
+                  className="u-project-button u-btn-primary"
+                  aria-label={`Download ${project.title} APK`}
+                >
+                  <ArrowDown size={15} />
+                  <span>GET APK</span>
+                </a>
+              </>
+            ) : project.actionLabel === "FIGMA DESIGN" ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="u-project-button u-btn-primary"
+                aria-label={`View ${project.title} in Figma`}
+              >
+                <SiFigma size={14} />
+                <span>VIEW FIGMA DESIGN</span>
+                <ArrowUpRight size={15} />
+              </a>
+            ) : (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="u-project-button u-btn-primary"
+                aria-label={`Explore ${project.title}`}
+              >
+                {project.link.includes("github.com") ? (
+                  <>
+                    <SiGithub size={15} />
+                    <span>VIEW REPOSITORY</span>
+                    <ArrowUpRight size={15} />
+                  </>
+                ) : (
+                  <>
+                    <span>EXPLORE PROJECT</span>
+                    <ArrowUpRight size={15} />
+                  </>
+                )}
+              </a>
+            )}
 
-            href={project.link}
-
-            target="_blank"
-
-            rel="noopener noreferrer"
-
-            className="u-project-button"
-
-          >
-
-            {project.actionLabel ?? "EXPLORE PROJECT"}
-
-
-          </a>
-
-          {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="u-project-button u-project-download"
-              aria-label={`View ${project.title} live project`}
-            >
-              LIVE PROJECT
-            </a>
-          )}
-
-          {project.status === "IN PROGRESS" && (
-            <button
-              type="button"
-              className="u-project-button"
-              disabled
-              aria-label={`${project.title} live project is in development`}
-              style={{ opacity: 0.65, cursor: "not-allowed" }}
-            >
-              IN DEVELOPMENT
-            </button>
-          )}
-
-          {project.apkDownload && (
-            <a
-              href={project.apkDownload}
-              className="u-project-button u-project-download"
-              aria-label={`Download ${project.title} APK`}
-            >
-              <ArrowDown size={18} aria-hidden="true" />
-              DOWNLOAD APK
-            </a>
-          )}
+            {project.status === "IN PROGRESS" && (
+              <span className="u-project-status-badge">
+                IN DEVELOPMENT
+              </span>
+            )}
           </div>
 
 

@@ -3673,89 +3673,81 @@ body {
 
 
 
+/* ================= PROJECT ACTION BUTTONS ================= */
+
 .u-project-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.u-project-actions .u-project-button {
-  flex: 1 1 180px;
-  width: auto;
-  gap: 8px;
-}
-
-.u-project-button.u-project-download {
-  background: #c7ff6b;
-  color: #111;
-}
-
-.u-project-button.u-project-download:hover {
-  background: #a8e84c;
-  color: #111;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
 }
 
 .u-project-button {
-
-
-  width:100%;
-
-
-  height:65px;
-
-
-  display:flex;
-
-
-  align-items:center;
-
-
-  justify-content:center;
-
-
-  border-radius:50px;
-
-
-  background:white;
-
-
-  color:black;
-
-
-  font-size:16px;
-
-
-  font-weight:900;
-
-
-  text-decoration:none;
-
-
-  transition:.35s ease;
-
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  border-radius: 40px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
+/* Primary Button: Clean Solid White Pill */
+.u-project-button.u-btn-primary {
+  flex: 1 1 0;
+  background: #ffffff;
+  color: #090909;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
 
+.u-project-button.u-btn-primary:hover {
+  background: var(--orange, #ff4d0a);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 77, 10, 0.4);
+}
 
+/* Secondary Button: Frosted Glass Pill */
+.u-project-button.u-btn-secondary {
+  flex: 1 1 0;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
 
+.u-project-button.u-btn-secondary:hover {
+  background: #ffffff;
+  color: #090909;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
 
-
-
-.u-project-button:hover {
-
-
-  background:#111;
-
-
-  color:white;
-
-
-  transform:
-
-  translateY(-5px);
-
-
+/* In-development status */
+.u-project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.15);
+  color: #cccccc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 
@@ -6865,14 +6857,18 @@ html, body {
 
   .u-project-actions {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
     gap: 8px !important;
   }
 
   .u-project-button {
-    height: 48px !important;
-    font-size: 13px !important;
+    flex: 1 1 130px !important;
+    height: 44px !important;
+    font-size: 12px !important;
+    padding: 0 12px !important;
     border-radius: 40px !important;
+    letter-spacing: 0.05em !important;
   }
 
   .u-works-cv {
