@@ -6764,9 +6764,11 @@ to{
   }
 
 }
-/* ================= FIGMA PROJECT IMAGE ================= */
+/* ================= PROJECT CARD COVER STYLING ================= */
 
-.project-04{
+.project-01,
+.project-04,
+.project-05{
   background-size:cover !important;
   background-position:center center !important;
   background-repeat:no-repeat !important;

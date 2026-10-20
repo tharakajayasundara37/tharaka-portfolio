@@ -60,10 +60,10 @@ import {
 const services = [
   {
     n: "01",
-    title: "WEB DEVELOPMENT",
-    text: "Fast, responsive and modern websites built for real people.",
-    tags: ["NEXT.JS", "REACT", "FULL STACK"],
-    image: "/images/welfare.png",
+    title: "WEB & 3D PLATFORMS",
+    text: "High-performance websites, 3D WebGL configurators, and modern e-commerce platforms built for luxury brands and growing businesses.",
+    tags: ["NEXT.JS 14", "THREE.JS 3D", "FULL STACK"],
+    image: "/images/lansakara-services.jpg",
   },
 
   {
@@ -105,6 +105,29 @@ const projects = [
 
   {
     n:"01",
+    title:"Lansakara Furniture Atelier",
+    category:"LUXURY 3D E-COMMERCE",
+
+    description:
+    "A high-end bespoke timber e-commerce platform featuring an interactive 3D WebGL chair configurator, dynamic wood material studio, official commission invoice generation, and full-stack artisan portal.",
+
+    image:"/images/lansakara-furniture.jpg",
+
+    tags:[
+      "NEXT.JS 14",
+      "THREE.JS",
+      "WEBGL",
+      "MONGODB",
+      "VERCEL",
+    ],
+
+    link:
+    "https://lansakara-furniture.vercel.app",
+  },
+
+
+  {
+    n:"02",
     title:"WelfareX",
     category:"FULL STACK PROJECT",
 
@@ -127,7 +150,7 @@ const projects = [
 
 
   {
-    n:"02",
+n:"03",
     title:"WelfareX UI / UX Design",
     category:"FIGMA DESIGN",
 
@@ -149,7 +172,7 @@ const projects = [
 
 
   {
-    n:"03",
+    n:"04",
     title:"News Blog",
     category:"FULL STACK PROJECT",
 
@@ -173,7 +196,7 @@ const projects = [
 
 
   {
-    n:"04",
+    n:"05",
     title:"MediCare Appointment App",
 
     category:"MOBILE APPLICATION",
@@ -197,7 +220,7 @@ const projects = [
 
 
   {
-    n:"05",
+    n:"06",
     title:"Japolic UI / UX Design",
 
     category:"FIGMA DESIGN",
@@ -221,7 +244,7 @@ const projects = [
 
 
   {
-    n:"06",
+    n:"07",
     title:"GlobalVista",
 
     category:"WEB & MOBILE APPLICATION",
