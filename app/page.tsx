@@ -2666,85 +2666,32 @@ id="contact"
             </div>
 
             {/* LINKS */}
-
             <div className="u-footer-links">
-
-
               <h4>
                 QUICK LINKS
               </h4>
 
-
-              <a href="#home">
-                Home
-              </a>
-
-
-              <a href="#about">
-                About
-              </a>
-
-
-              <a href="#services">
-                Services
-              </a>
-
-
-              <a href="#works">
-                Works
-              </a>
-
-
-              <a href="#contact">
-                Contact
-              </a>
-
-
+              <div className="u-footer-link-items">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#works">Works</a>
+                <a href="#contact">Contact</a>
+              </div>
             </div>
 
             {/* CONTACT */}
-
-
             <div className="u-footer-contact">
-
-
               <h4>
                 GET IN TOUCH
               </h4>
 
-
-
-              <a href="mailto:tharakajayasundara37@gmail.com">
-
-                Email
-
-              </a>
-
-
-
-              <a href="tel:+94743153951">
-
-                Phone
-
-              </a>
-
-
-
-              <a href="https://github.com/tharakajayasundara37">
-
-                GitHub
-
-              </a>
-
-
-
-              <a href="https://www.linkedin.com/in/tharaka-jayasundara-4ab1813ba/">
-
-                LinkedIn
-
-              </a>
-
-
+              <div className="u-footer-link-items">
+                <a href="mailto:tharakajayasundara37@gmail.com">Email</a>
+                <a href="tel:+94743153951">Phone</a>
+                <a href="https://github.com/tharakajayasundara37" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/tharaka-jayasundara-4ab1813ba/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
             </div>
 
           </div>
