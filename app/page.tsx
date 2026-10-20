@@ -92,9 +92,9 @@ const services = [
 
   {
     n: "05",
-    title: "GLOBALVISTA APP DEVELOPMENT",
-    text: "A React Native web and mobile application currently in active development.",
-    tags: ["REACT NATIVE", "WEB APP", "MOBILE APP"],
+    title: "TRAVEL & EXPEDITION PLATFORMS",
+    text: "Full-stack reservation platforms featuring interactive map exploration, dynamic travel plans, secure checkout, and official PDF travel vouchers.",
+    tags: ["NEXT.JS 16", "NESTJS", "MONGODB", "LEAFLET"],
     image: "/images/globalvista.jpg",
   },
 ];
@@ -245,22 +245,22 @@ const projects = [
 
   {
     n:"07",
-    title:"GlobalVista",
+    title:"GlobalVista Luxury Travel",
 
-    category:"WEB & MOBILE APPLICATION",
+    category:"FULL-STACK RESERVATION SYSTEM",
 
     description:
-    "A React Native web and mobile application currently under active development, focused on delivering a modern cross-platform experience.",
+    "An enterprise luxury expedition booking ecosystem built with Next.js 16, NestJS, and MongoDB Atlas. Features dynamic itinerary pricing, Leaflet interactive mapping, multi-role auth (Traveller, Guide, Admin), and official print-ready travel vouchers & tax invoices.",
 
     image:"/images/globalvista.jpg",
 
     tags:[
-      "REACT NATIVE",
-      "WEB APP",
-      "MOBILE APP",
+      "NEXT.JS 16",
+      "NESTJS",
+      "MONGODB",
+      "LEAFLET",
+      "TAILWIND",
     ],
-
-    status:"IN PROGRESS",
 
     link:
     "https://github.com/tharakajayasundara37/GlobalVista",
