@@ -101,12 +101,20 @@ const services = [
 
 
 
+const filterTabs = [
+  { id: "all", label: "ALL" },
+  { id: "web", label: "WEB & FULL-STACK" },
+  { id: "mobile", label: "MOBILE APPS" },
+  { id: "uiux", label: "UI / UX (FIGMA)" },
+] as const;
+
 const projects = [
 
   {
     n:"01",
     title:"Lansakara Furniture Atelier",
     category:"LUXURY 3D E-COMMERCE",
+    filterCategory:"web",
 
     description:
     "A high-end bespoke timber e-commerce platform featuring an interactive 3D WebGL chair configurator, dynamic wood material studio, official commission invoice generation, and full-stack artisan portal.",
@@ -130,6 +138,7 @@ const projects = [
     n:"02",
     title:"WelfareX",
     category:"FULL STACK PROJECT",
+    filterCategory:"web",
 
     description:
     "A modern welfare management system to manage users, services and digital workflows efficiently.",
@@ -153,6 +162,7 @@ const projects = [
     n:"03",
     title:"WelfareX UI / UX Design",
     category:"FIGMA DESIGN",
+    filterCategory:"uiux",
 
     description:
     "A modern interface design for the WelfareX management platform, focused on clear workflows, usability and a consistent visual experience.",
@@ -175,6 +185,7 @@ const projects = [
     n:"04",
     title:"News Blog",
     category:"FULL STACK PROJECT",
+    filterCategory:"web",
 
     description:
     "A modern news and blog management platform for creating, managing and publishing digital content efficiently.",
@@ -200,6 +211,7 @@ const projects = [
     title:"MediCare Appointment App",
 
     category:"MOBILE APPLICATION",
+    filterCategory:"mobile",
 
     description:
     "A healthcare appointment platform designed to connect patients and doctors with seamless booking and management features.",
@@ -224,6 +236,7 @@ const projects = [
     title:"Japolic UI / UX Design",
 
     category:"FIGMA DESIGN",
+    filterCategory:"uiux",
 
     description:
     "A modern web interface design created in Figma with a strong focus on clean layouts, usability and visual experience.",
@@ -240,6 +253,7 @@ const projects = [
 
     link:
     "https://www.figma.com/design/U8s5MWJdLAkC5MUCFg1oqw/Japolic-%E2%80%94-Web-Design-Assessment?node-id=2-68&t=Ri5yYplBqXdmLERL-1",
+    actionLabel:"FIGMA DESIGN",
   },
 
 
@@ -248,6 +262,7 @@ const projects = [
     title:"GlobalVista Luxury Travel",
 
     category:"FULL-STACK RESERVATION SYSTEM",
+    filterCategory:"web",
 
     description:
     "An enterprise luxury expedition booking ecosystem built with Next.js 16, NestJS, and MongoDB Atlas. Features dynamic itinerary pricing, Leaflet interactive mapping, multi-role auth (Traveller, Guide, Admin), and official print-ready travel vouchers & tax invoices.",
@@ -479,6 +494,13 @@ const sendEmail = (e:any)=>{
 
   const [contactOpen,setContactOpen] = useState(false);
 
+  const [activeFilter, setActiveFilter] = useState<string>("all");
+
+  const filteredProjects = activeFilter === "all"
+    ? projects
+    : projects.filter((p) => p.filterCategory === activeFilter);
+
+
 
 
 // Scroll Reveal Animation
@@ -550,27 +572,17 @@ useEffect(()=>{
 
 
   elements.forEach((element)=>{
-
-
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      element.classList.add("in-view");
+    }
     observer.observe(element);
-
-
   });
 
-
-
-
-
   return ()=>{
-
-
     observer.disconnect();
-
-
   };
-
-
-},[]);
+},[activeFilter]);
  // Generate snow particles
 
 useEffect(()=>{
@@ -2200,6 +2212,33 @@ useEffect(()=>{
     </span>
   </h2>
 
+  {/* CATEGORY FILTER TABS */}
+  <div 
+    className="u-works-filters" 
+    role="tablist" 
+    aria-label="Filter projects by category"
+  >
+    {filterTabs.map((tab) => {
+      const count = tab.id === "all"
+        ? projects.length
+        : projects.filter((p) => p.filterCategory === tab.id).length;
+      const isActive = activeFilter === tab.id;
+
+      return (
+        <button
+          key={tab.id}
+          type="button"
+          role="tab"
+          aria-selected={isActive}
+          className={`u-filter-tab ${isActive ? "active" : ""}`}
+          onClick={() => setActiveFilter(tab.id)}
+        >
+          <span>{tab.label}</span>
+          <span className="u-filter-count">{count}</span>
+        </button>
+      );
+    })}
+  </div>
 
 </div>
 
@@ -2209,14 +2248,14 @@ useEffect(()=>{
 
 
 {
-  projects.map((project)=>(
+  filteredProjects.map((project)=>(
 
 
     <article
 
       key={project.title}
 
-      className="u-project"
+      className="u-project in-view"
 
       data-reveal
 
@@ -2382,6 +2421,12 @@ useEffect(()=>{
 
   ))
 }
+
+{filteredProjects.length === 0 && (
+  <div className="u-projects-empty">
+    <p>No projects found in this category.</p>
+  </div>
+)}
 
 
 
