@@ -150,7 +150,7 @@ const projects = [
 
 
   {
-n:"03",
+    n:"03",
     title:"WelfareX UI / UX Design",
     category:"FIGMA DESIGN",
 
