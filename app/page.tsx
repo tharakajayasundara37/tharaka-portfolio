@@ -1030,50 +1030,31 @@ useEffect(()=>{
 
       </nav>
 
-      <a
-        href="#contact"
-        className="u-talk-new"
-      >
+      <div className="u-header-actions">
+        <a
+          href="#contact"
+          className="u-talk-new"
+        >
+          LET'S TALK
+          <ArrowUpRight size={15}/>
+        </a>
 
-        LET'S TALK
-
-        <ArrowUpRight size={15}/>
-
-      </a>
-
-
-
-
-
-      <button
-
-        className="u-menu-new"
-
-        onClick={()=>setOpen(!open)}
-
-      >
-
-        {
-          open ?
-
-          <X/>
-
-          :
-
-          <Menu/>
-
-        }
-
-      </button>
-
-
-
-
-
+        <button
+          className="u-menu-new"
+          onClick={()=>setOpen(!open)}
+          aria-label="Toggle mobile menu"
+        >
+          {
+            open ?
+            <X size={20}/>
+            :
+            <Menu size={20}/>
+          }
+        </button>
+      </div>
 
       {
         open && (
-
           <div className="u-mobile-new">
             <a href="#home" onClick={()=>setOpen(false)}>
               HOME
@@ -1090,8 +1071,15 @@ useEffect(()=>{
             <a href="#contact" onClick={()=>setOpen(false)}>
               CONTACT
             </a>
+            <a
+              href="#contact"
+              className="u-mobile-talk-btn"
+              onClick={()=>setOpen(false)}
+            >
+              LET'S TALK
+              <ArrowUpRight size={16}/>
+            </a>
           </div>
-
         )
       }
 

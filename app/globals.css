@@ -5178,35 +5178,7 @@ to{
 
 }
 }
-@media(max-width:600px){
-
-  .floating-contact{
-
-    right:20px;
-
-    bottom:20px;
-
-  }
-
-
-  .contact-toggle{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:50%;
-
-  }
-
-
-  .contact-toggle span{
-
-    display:none;
-
-  }
-
-}
+/* (Moved to Comprehensive Mobile Responsiveness Block) */
 
 /* ================= WHO I AM ================= */
 
@@ -6400,546 +6372,625 @@ to{
   z-index:5;
 
 }
-/* ================= MOBILE HERO FINAL CENTER VERSION ================= */
+/* ==========================================================================
+   COMPREHENSIVE MOBILE & TABLET RESPONSIVENESS OVERHAUL
+   ========================================================================== */
 
-
-@media(max-width:768px){
-
-
-
-/* ================= HERO ================= */
-
-
-.u-hero-scroll,
-.u-hero-scroll .u-hero{
-
-
-    min-height:100vh;
-
-    height:100vh;
-
-    overflow:hidden;
-
-
+/* 1. Global Viewport Fit */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.unifex-site {
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
 }
 
-
-.u-hero{
-
-
-    position:relative;
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    align-items:center;
-
-
-    justify-content:flex-start;
-
-
-    padding:
-
-    90px 20px 40px;
-
-
+/* 2. Header & Action Bar */
+.u-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-
-
-
-
-
-/* ================= NAME ================= */
-
-
-.u-hero-word{
-
-
-    order:1;
-
-
-    position:relative !important;
-
-
-    width:100%;
-
-
-    left:auto !important;
-
-
-    right:auto !important;
-
-
-    top:auto !important;
-
-
-    transform:none !important;
-
-
-    text-align:center;
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    z-index:5;
-
-
+.u-mobile-talk-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 14px 22px;
+  background: var(--orange, #ff4d0a) !important;
+  color: #ffffff !important;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(255, 77, 10, 0.35);
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
-
-
-
-
-.u-hero-word span{
-
-
-    display:block;
-
-
-    width:100%;
-
-
-    text-align:center;
-
-
-    font-size:13px;
-
-
-    letter-spacing:.35em;
-
-
-    color:#008fc9;
-
-
+.u-mobile-talk-btn:hover {
+  background: #e04205 !important;
+  transform: translateY(-2px);
 }
 
-
-
-
-
-
-/* ================= TITLE ================= */
-
-
-.u-hero-word{
-
-
-    font-size:55px;
-
-
-    line-height:.82;
-
-
-    letter-spacing:-.07em;
-
-
-    text-align:center;
-
-
-}
-
-
-
-
-
-
-/* ================= IMAGE BIGGER ================= */
-
-.u-portrait{
-
-    order:2;
-
-    position:relative;
-
-    width:100%;
-
-    height:800px;
-
-    margin-top:2px;
-
-    margin-left:auto;
-
-    margin-right:auto;
-
-    left:auto;
-
-    right:auto;
-
-    top:auto;
-
-    bottom:auto;
-
-    transform:none;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    z-index:4;
-
-}
-.u-portrait img{
-
-    width:200%;
-
-    height:auto;
-
-    object-fit:contain;
-
-}
-
-
-/* ================= LEFT CONTENT ================= */
-
-
-.u-hero-left{
-
-
-    order:3;
-
-
-    position:relative;
-
-
-    width:100%;
-
-
-    margin-top:20px;
-
-
-    padding:0;
-
-
-    left:auto;
-
-
-    right:auto;
-
-
-    top:auto;
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    text-align:center;
-
-
-    z-index:10;
-
-
-}
-
-
-
-
-
-
-
-/* ================= ROLE LIST ================= */
-
-
-.u-role-list{
-
-
-    position:relative;
-
-
-    width:max-content;
-
-
-    padding-left:22px;
-
-
-    margin:0 auto;
-
-
-    text-align:left;
-
-
-}
-
-
-
-
-
-.u-role-list::before{
-
-
-    left:0;
-
-
-    top:5px;
-
-
-    height:95%;
-
-
-    width:4px;
-
-
-}
-
-.u-role-list span{
-
-
-    font-size:18px;
-
-
-    line-height:1.05;
-
-
-}
-
-
-
-
-
-
-
-/* ================= PROJECT ABOUT ================= */
-
-
-.u-link-row{
-
-
-    width:100%;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    gap:35px;
-
-
-    margin-top:22px;
-
-
-}
-
-
-
-
-
-.u-link-row a{
-
-
-    font-size:10px;
-
-
-}
-
-
-
-
-
-
-
-/* ================= DOWNLOAD CV ================= */
-
-
-.u-hero-left .u-cv-button{
-
-
-    position:relative;
-
-
-    left:auto;
-
-
-    top:auto;
-
-    margin:
-
-    35px auto 0;
-
-
-    padding:
-
-    16px 45px;
-
-
-    transform:none;
-
-
-}
-
-
-
-
-
-
-
-/* ================= HIDE DESKTOP ELEMENTS ================= */
-
-
-.u-hero-right{
-
-
-    display:none;
-
-
-}
-
-
-
-
-
-
-
-/* ================= CONTACT BUTTON ================= */
-
-
-.u-floating-contact{
-
-
-    position:fixed;
-
-
-    right:20px;
-
-
-    bottom:20px;
-
-
-    z-index:50;
-
-
-}
-
-
-
-
-
-
-
-/* ================= SCROLL ================= */
-
-
-.u-scroll-label{
-
-
-    position:fixed;
-
-
-    left:20px;
-
-
-    bottom:20px;
-
-
-    z-index:50;
-
-
-}
-
-
-
-
-
-
-
-/* ================= REMOVE EXTRA BAR ================= */
-
-
-.u-marquee,
-
-.u-scroll-text{
-
-
-    display:none;
-
-
+@media (max-width: 900px) {
+  .u-header-new {
+    top: 14px !important;
+    height: 60px !important;
+    padding: 0 16px !important;
+    width: calc(100% - 24px) !important;
+    border-radius: 40px !important;
   }
 
-}
-/* ================= MOBILE SERVICES BLOB HIDE ================= */
-
-@media(max-width:768px){
-
-    .u-service-blob{
-
-        display:none;
-
-    }
-
-}
-/* ================= MOBILE FOOTER QUICK LINKS HIDE ================= */
-
-@media(max-width:768px){
-
-  .u-footer-links{
-    display:none;
+  .u-nav-new {
+    display: none !important;
   }
 
-}
-/* ================= MOBILE FOOTER CONTACT HIDE ================= */
-
-@media(max-width:768px){
-
-  .u-footer-contact{
-    display:none !important;
+  .u-talk-new {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 8px 14px !important;
+    border-radius: 30px !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.05em !important;
+    background: #ffffff !important;
+    color: #090909 !important;
+    text-decoration: none !important;
+    transition: 0.25s ease !important;
   }
 
-}
-/* ================= PROJECT CARD COVER STYLING ================= */
-
-.project-01,
-.project-04,
-.project-05{
-  background-size:cover !important;
-  background-position:center center !important;
-  background-repeat:no-repeat !important;
-}
-@media(max-width:1000px){
-
-  .u-who-tags{
-    grid-template-columns:repeat(2,1fr);
+  .u-talk-new:hover {
+    background: var(--orange, #ff4d0a) !important;
+    color: #ffffff !important;
   }
 
+  .u-menu-new {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+  }
+
+  .u-mobile-new {
+    position: absolute !important;
+    top: 68px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #090909 !important;
+    border-radius: 24px !important;
+    padding: 24px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+    z-index: 10000 !important;
+  }
+
+  .u-mobile-new a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.12em !important;
+    padding: 4px 0 !important;
+  }
 }
 
-
-@media(max-width:600px){
-
-  .u-who-tags{
-    grid-template-columns:1fr;
+/* 3. Hero Section on Mobile (Full content visible, stats cards restored) */
+@media (max-width: 768px) {
+  .u-hero-scroll,
+  .u-hero-scroll .u-hero {
+    height: auto !important;
+    min-height: 100svh !important;
+    overflow: visible !important;
   }
 
-  .u-who-tags span{
-    min-height:95px;
+  .u-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 95px 16px 45px !important;
+    position: relative !important;
   }
 
+  /* Order 1: Title */
+  .u-hero-word {
+    order: 1 !important;
+    position: relative !important;
+    width: 100% !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    text-align: center !important;
+    font-size: clamp(36px, 11vw, 52px) !important;
+    line-height: 0.88 !important;
+    letter-spacing: -0.06em !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+    z-index: 5 !important;
+  }
+
+  .u-hero-word span {
+    font-size: 11px !important;
+    letter-spacing: 0.3em !important;
+    color: #008fc9 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  /* Order 2: Portrait */
+  .u-portrait {
+    order: 2 !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 360px !important;
+    margin: 8px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    overflow: hidden !important;
+    z-index: 4 !important;
+  }
+
+  .u-portrait img {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    transform: none !important;
+  }
+
+  /* Order 3: Hello Card, Links & CV */
+  .u-hero-left {
+    order: 3 !important;
+    position: relative !important;
+    width: 100% !important;
+    margin-top: 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    z-index: 10 !important;
+  }
+
+  .u-left-card {
+    text-align: center !important;
+  }
+
+  .u-left-card-label {
+    font-size: 11px !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .u-role-list {
+    margin: 8px auto 0 !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    width: auto !important;
+  }
+
+  .u-role-list::before {
+    display: none !important;
+  }
+
+  .u-role-list span {
+    font-size: 16px !important;
+    display: inline-block !important;
+    margin: 0 4px !important;
+  }
+
+  .u-link-row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-top: 18px !important;
+  }
+
+  .u-link-row a {
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .u-hero-left .u-cv-button {
+    margin: 18px auto 0 !important;
+    padding: 13px 32px !important;
+    font-size: 12px !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  /* Order 4: Stats Cards (Restored in sleek 3-column pill row!) */
+  .u-hero-right {
+    order: 4 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 26px auto 0 !important;
+    z-index: 10 !important;
+  }
+
+  .stat-card {
+    flex: 1 !important;
+    padding: 12px 6px !important;
+    background: rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    text-align: center !important;
+    min-width: 0 !important;
+  }
+
+  .stat-card b {
+    font-size: 20px !important;
+    color: #090909 !important;
+    display: block !important;
+    line-height: 1 !important;
+  }
+
+  .stat-card span {
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    color: #666666 !important;
+    line-height: 1.2 !important;
+    display: block !important;
+    margin-top: 4px !important;
+  }
+}
+
+/* 4. About Section */
+@media (max-width: 768px) {
+  .u-about-detail {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .u-about-image {
+    min-height: 340px !important;
+    max-height: 380px !important;
+  }
+
+  .u-about-copy {
+    padding: 40px 18px !important;
+  }
+
+  .u-about-copy h2 {
+    font-size: clamp(30px, 8vw, 44px) !important;
+    margin: 24px 0 18px !important;
+    line-height: 1 !important;
+  }
+
+  .u-about-copy p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* 5. Who I Am / Background Section */
+@media (max-width: 768px) {
+  .u-who {
+    padding: 60px 18px !important;
+  }
+
+  .u-who-header h2 {
+    font-size: clamp(34px, 10vw, 50px) !important;
+    line-height: 0.9 !important;
+    margin-top: 25px !important;
+    word-break: break-word !important;
+  }
+
+  .u-who-content p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  .u-who-tags {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 30px !important;
+  }
+
+  .u-who-tags span {
+    min-height: 65px !important;
+    padding: 14px 10px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 16px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .u-who-tags {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 6. Technology Stack (Clean 2-column mobile grid) */
+@media (max-width: 768px) {
+  .u-tech {
+    padding: 60px 18px !important;
+  }
+
+  .u-tech-header h2 {
+    font-size: clamp(30px, 8vw, 46px) !important;
+  }
+
+  .u-tech-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 30px !important;
+  }
+
+  .u-tech-card {
+    height: 110px !important;
+    padding: 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .u-tech-number {
+    font-size: 10px !important;
+    top: 10px !important;
+    right: 12px !important;
+  }
+
+  .u-tech-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .u-tech-card h3 {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .u-tech-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 7. Capabilities Section */
+@media (max-width: 768px) {
+  .u-capabilities {
+    padding: 60px 18px !important;
+  }
+
+  .u-capabilities-header h2 {
+    font-size: clamp(30px, 8vw, 46px) !important;
+  }
+
+  .u-capabilities-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 30px !important;
+  }
+
+  .u-capability-card {
+    min-height: auto !important;
+    padding: 24px 20px !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* 8. Works Section (Selected Projects & Filter Tabs) */
+@media (max-width: 768px) {
+  .u-works {
+    padding: 60px 16px !important;
+  }
+
+  .u-works-header h2 {
+    font-size: clamp(38px, 11vw, 55px) !important;
+  }
+
+  .u-works-filters {
+    gap: 8px !important;
+    margin-top: 25px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .u-filter-tab {
+    padding: 8px 14px !important;
+    font-size: 11px !important;
+    gap: 6px !important;
+  }
+
+  .u-projects {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-top: 25px !important;
+  }
+
+  .u-project-screen {
+    height: 520px !important;
+  }
+
+  .u-project-meta {
+    top: 18px !important;
+    left: 18px !important;
+    right: 18px !important;
+  }
+
+  .u-project-meta span:first-child {
+    padding: 8px 14px !important;
+    font-size: 10px !important;
+  }
+
+  .u-project-content {
+    left: 18px !important;
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+
+  .u-project-content h3 {
+    font-size: 20px !important;
+  }
+
+  .u-project-content p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 8px 0 14px !important;
+  }
+
+  .u-project-tags {
+    gap: 6px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .u-project-tags span {
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .u-project-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .u-project-button {
+    height: 48px !important;
+    font-size: 13px !important;
+    border-radius: 40px !important;
+  }
+
+  .u-works-cv {
+    margin-top: 35px !important;
+  }
+
+  .u-works-cv .u-cv-button {
+    padding: 14px 35px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* 9. Contact Section & Form */
+@media (max-width: 768px) {
+  .u-contact {
+    padding: 60px 16px 30px !important;
+  }
+
+  .u-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 35px !important;
+  }
+
+  .u-contact-title h2 {
+    font-size: clamp(36px, 11vw, 54px) !important;
+    line-height: 0.95 !important;
+    word-break: break-word !important;
+  }
+
+  .u-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .u-contact-form input,
+  .u-contact-form textarea {
+    padding: 14px 16px !important;
+    font-size: 14px !important;
+  }
+
+  .u-contact-form button {
+    height: 50px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* 10. Footer Section (Fully visible & responsive on mobile) */
+@media (max-width: 768px) {
+  .u-footer {
+    margin-top: 50px !important;
+    padding-top: 30px !important;
+  }
+
+  .u-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .u-footer-links {
+    display: flex !important;
+  }
+
+  .u-footer-contact {
+    display: flex !important;
+  }
+
+  .u-footer-bottom {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+}
+
+/* 11. Floating LET'S TALK Button (Always visible & beautiful on Mobile!) */
+@media (max-width: 768px) {
+  .floating-contact {
+    right: 18px !important;
+    bottom: 18px !important;
+    z-index: 99999 !important;
+  }
+
+  .contact-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: 48px !important;
+    padding: 10px 20px !important;
+    border-radius: 40px !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.08em !important;
+    gap: 8px !important;
+    background: #ff4d0a !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 30px rgba(255, 77, 10, 0.45) !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+
+  .contact-toggle span {
+    display: inline-block !important; /* Always show LET'S TALK text */
+    white-space: nowrap !important;
+  }
+
+  .contact-toggle svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .contact-menu {
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 58px !important;
+    width: min(290px, calc(100vw - 36px)) !important;
+    max-width: calc(100vw - 36px) !important;
+    padding: 16px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4) !important;
+  }
 }
