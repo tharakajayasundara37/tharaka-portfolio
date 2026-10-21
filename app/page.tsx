@@ -449,20 +449,29 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>)=>{
 
   useEffect(() => {
     let lastScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+    let ticking = false;
 
     const handleNavScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 40);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-      // Hide header when scrolling down past 80px
-      if (currentScrollY > 80 && currentScrollY - lastScrollY > 8) {
-        setHeaderVisible(false);
-      } else if (lastScrollY - currentScrollY > 8 || currentScrollY <= 60) {
-        // Show header when scrolling up or near top
-        setHeaderVisible(true);
+          // Ignore micro-fluctuations on scroll pause/stop to prevent jitter
+          if (Math.abs(currentScrollY - lastScrollY) >= 12 || currentScrollY <= 60) {
+            setIsScrolled(currentScrollY > 40);
+
+            if (currentScrollY > 120 && currentScrollY > lastScrollY) {
+              setHeaderVisible(false);
+            } else if (currentScrollY < lastScrollY || currentScrollY <= 60) {
+              setHeaderVisible(true);
+            }
+
+            lastScrollY = currentScrollY;
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      lastScrollY = currentScrollY;
     };
 
     window.addEventListener('scroll', handleNavScroll, { passive: true });
@@ -500,17 +509,8 @@ useEffect(()=>{
             "in-view"
           );
 
-
-        }
-
-
-        else{
-
-
-          entry.target.classList.remove(
-            "in-view"
-          );
-
+          // Once revealed, unobserve to permanently prevent animation re-triggers / vibrating
+          observer.unobserve(entry.target);
 
         }
 
@@ -523,9 +523,9 @@ useEffect(()=>{
 
     {
 
-      threshold:0.14,
+      threshold:0.08,
 
-      rootMargin:"0px 0px -80px 0px"
+      rootMargin:"0px 0px -40px 0px"
 
     }
 
@@ -550,8 +550,9 @@ useEffect(()=>{
     const rect = element.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       element.classList.add("in-view");
+    } else {
+      observer.observe(element);
     }
-    observer.observe(element);
   });
 
   return ()=>{
@@ -787,183 +788,8 @@ useEffect(() => {
 },[]);
 
 
-// Generate snow particles
 
-useEffect(()=>{
-
-
-  const particles:SnowParticle[] =
-
-    Array.from(
-
-      {
-        length:120
-      },
-
-
-      (_,index)=>({
-
-
-        id:index,
-
-
-        left:
-        Math.random()*100,
-
-
-        size:
-        Math.random()*8+3,
-
-
-        duration:
-        Math.random()*12+8,
-
-
-        delay:
-        Math.random()*15,
-
-
-        blur:
-        Math.random()*3,
-
-
-        opacity:
-        Math.random()*0.7+0.3,
-
-
-      })
-
-
-    );
-
-
-
-  setSnowflakes(
-    particles
-  );
-
-
-},[]);
-
-
-
-
-
-// Hero parallax scroll
-
-useEffect(()=>{
-
-
-  let frame:number = 0;
-
-
-
-  const updateHero = ()=>{
-
-
-    cancelAnimationFrame(frame);
-
-
-
-    frame =
-
-    requestAnimationFrame(()=>{
-
-
-      const distance =
-
-        Math.max(
-
-          window.innerHeight * 0.72,
-
-          420
-
-        );
-
-
-
-      const progress =
-
-        window.scrollY /
-
-        distance;
-
-
-
-      setHeroProgress(
-
-
-        Math.min(
-
-          1,
-
-
-          Math.max(
-
-            0,
-
-            progress
-
-          )
-
-
-        )
-
-
-      );
-
-
-
-    });
-
-
-
-  };
-
-
-
-  updateHero();
-
-
-
-  window.addEventListener(
-
-    "scroll",
-
-    updateHero,
-
-    {
-
-      passive:true
-
-    }
-
-  );
-
-
-
-  return ()=>{
-
-
-    cancelAnimationFrame(frame);
-
-
-
-    window.removeEventListener(
-
-      "scroll",
-
-      updateHero
-
-    );
-
-
-  };
-
-
-},[]);
-
- return (
+return (
 
   <main className="unifex-site">
 
