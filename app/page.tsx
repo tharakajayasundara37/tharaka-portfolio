@@ -131,7 +131,7 @@ const projects: Project[] = [
     filterCategory: "web",
     description:
       "A modern welfare management system to manage users, services and digital workflows efficiently.",
-    image: "/images/welfare.png",
+    image: "/images/welfare-figma-design.jpg",
     tags: [
       "NEXT.JS",
       "MONGODB",
