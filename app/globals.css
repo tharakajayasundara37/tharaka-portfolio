@@ -3284,403 +3284,208 @@ body {
 
 
 .u-project {
-
-
-  position:relative;
-
-
-  overflow:hidden;
-
-
-  border-radius:35px;
-
-
-  transition:.5s ease;
-
-
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #0d0e12;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  will-change: transform;
 }
-
-
-
-
-
-
 
 .u-project:hover,
 .u-project[data-reveal].in-view:hover {
-
-
-  transform:
-
-  translateY(-12px);
-
-
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 22px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 77, 10, 0.18);
 }
-
-
-
-
-
-
 
 .u-project-screen {
-
-
-  width:100%;
-
-
-  height:620px;
-
-
-  position:relative;
-
-
-  background-size:cover;
-
-
-  background-position:center;
-
-
-  background-repeat:no-repeat;
-
-
-  display:flex;
-
-
-  align-items:flex-end;
-
-
-  overflow:hidden;
-
-
-  transition:.6s ease;
-
-
+  width: 100%;
+  height: 640px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 28px;
+  transition: transform 0.5s ease;
 }
 
-
-
-
-
-
-
-.u-project:hover .u-project-screen {
-
-
-  transform:scale(1.03);
-
-
+.u-project-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.u-project:hover .u-project-bg-img {
+  transform: scale(1.05);
+}
 
-
-
-
-
-
+/* Rich Smooth Dark Scrim for High Contrast & Text Legibility */
 .u-project-overlay {
-
-
-  position:absolute;
-
-
-  inset:0;
-
-
-
-  background:
-
-
-  linear-gradient(
-
-
-    to bottom,
-
-
-    rgba(0,0,0,.05) 20%,
-
-
-    rgba(0,0,0,.92) 90%
-
-
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 7, 10, 0.60) 0%,
+    rgba(6, 7, 10, 0.10) 26%,
+    rgba(6, 7, 10, 0.25) 46%,
+    rgba(6, 7, 10, 0.82) 72%,
+    rgba(6, 7, 10, 0.98) 100%
   );
-
-
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.35s ease;
 }
 
+.u-project:hover .u-project-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 7, 10, 0.68) 0%,
+    rgba(6, 7, 10, 0.16) 26%,
+    rgba(6, 7, 10, 0.32) 46%,
+    rgba(6, 7, 10, 0.86) 72%,
+    rgba(6, 7, 10, 0.99) 100%
+  );
+}
 
-
-
-
-
-
+/* Top Meta Row: Category Badge & Project Index Number */
 .u-project-meta {
-
-
-  position:absolute;
-
-
-  top:35px;
-
-
-  left:35px;
-
-
-  right:35px;
-
-
-  display:flex;
-
-
-  justify-content:space-between;
-
-
-  z-index:5;
-
-
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  right: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 5;
+  pointer-events: none;
 }
-
-
-
-
-
-
 
 .u-project-meta span:first-child {
-
-
-  background:
-
-
-  rgba(255,255,255,.15);
-
-
-
-  color:white;
-
-
-  padding:
-
-
-  12px 22px;
-
-
-  border-radius:30px;
-
-
-  font-size:12px;
-
-
-  font-weight:900;
-
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10.5px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: rgba(12, 13, 16, 0.70);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
 }
-
-
-
-
-
-
 
 .u-project-meta span:last-child {
-
-
-  color:white;
-
-
-  font-size:16px;
-
-
-  font-weight:900;
-
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(12, 13, 16, 0.70);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
-
-
-
-
-
-
-
+/* Internal Content Container: Inset 26px matching Top Meta exactly */
 .u-project-content {
-
-
-  position:absolute;
-
-
-  left:40px;
-
-
-  right:40px;
-
-
-  bottom:40px;
-
-
-  z-index:10;
-
-
-  color:white;
-
-
-  display:flex;
-
-
-  flex-direction:column;
-
-
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  bottom: 26px;
+  z-index: 10;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: auto;
 }
 
-
-
-
-
-
-
+/* Card Title: Professional Sans-Serif, Crisp & Balanced */
 .u-project-content h3 {
-
-
-  font-size:34px;
-
-
-  line-height:1.1;
-
-
-  font-weight:900;
-
-
-  letter-spacing:-.05em;
-
-
-  margin:0 0 15px;
-
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1.28;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  min-height: 56px;
+  display: flex;
+  align-items: flex-start;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+  word-break: break-word;
 }
 
-
-
-
-
-
-
+/* Card Description: Clean, Legible, Clamped with Unified Min-Height */
 .u-project-content p {
-
-
-  font-size:15px;
-
-
-  line-height:1.5;
-
-
-  color:white;
-
-
-  max-width:430px;
-
-
-  margin-bottom:20px;
-
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.58;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0 0 16px 0;
+  max-width: 100%;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 64px;
 }
 
-
-
-
-
-
-
+/* Technology Pills Container: Aligns Action Buttons in Lockstep */
 .u-project-tags {
-
-
-  display:flex;
-
-
-  flex-wrap:wrap;
-
-
-  gap:10px;
-
-
-  margin-bottom:20px;
-
-
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 7px;
+  margin-bottom: 18px;
+  min-height: 58px;
 }
-
-
-
-
-
-
 
 .u-project-tags span {
-
-
-  padding:
-
-
-  10px 18px;
-
-
-  border-radius:30px;
-
-
-  background:
-
-
-  rgba(255,255,255,.15);
-
-
-  border:
-
-
-  1px solid rgba(255,255,255,.25);
-
-
-  color:white;
-
-
-  font-size:12px;
-
-
-  font-weight:900;
-
-
-  transition:.3s ease;
-
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+  white-space: nowrap;
 }
-
-
-
-
-
-
 
 .u-project-tags span:hover {
-
-
-  background:white;
-
-
-  color:#111;
-
-
-  transform:
-
-  translateY(-5px);
-
-
+  background: #ffffff;
+  color: #0b0c0e;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
-
-
-
-/* ================= PROJECT ACTION BUTTONS ================= */
-
+/* Action Buttons Container */
 .u-project-actions {
   display: flex;
   align-items: center;
@@ -3694,51 +3499,54 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 48px;
-  border-radius: 40px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 900;
+  height: 44px;
+  border-radius: 999px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   outline: none;
   border: none;
   box-sizing: border-box;
   white-space: nowrap;
+  padding: 0 18px;
 }
 
-/* Primary Button: Clean Solid White Pill */
+/* Primary Button: Solid White Pill */
 .u-project-button.u-btn-primary {
   flex: 1 1 0;
   background: #ffffff;
-  color: #090909;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  color: #0a0a0c;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
 }
 
 .u-project-button.u-btn-primary:hover {
   background: var(--orange, #ff4d0a);
   color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(255, 77, 10, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 77, 10, 0.45);
 }
 
 /* Secondary Button: Frosted Glass Pill */
 .u-project-button.u-btn-secondary {
   flex: 1 1 0;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.26);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .u-project-button.u-btn-secondary:hover {
   background: #ffffff;
-  color: #090909;
+  color: #0a0a0c;
   border-color: #ffffff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* In-development status */
@@ -3746,16 +3554,16 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 11px;
+  padding: 7px 15px;
+  border-radius: 999px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.1em;
-  background: rgba(255, 255, 255, 0.15);
-  color: #cccccc;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.14);
+  color: #dddddd;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
-
 
 /* ================= CONTACT ================= */
 
@@ -6835,12 +6643,17 @@ html, body {
 
   .u-projects {
     grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    gap: 22px !important;
     margin-top: 25px !important;
+  }
+
+  .u-project {
+    border-radius: 24px !important;
   }
 
   .u-project-screen {
     height: 520px !important;
+    border-radius: 24px !important;
   }
 
   .u-project-meta {
@@ -6850,8 +6663,13 @@ html, body {
   }
 
   .u-project-meta span:first-child {
-    padding: 8px 14px !important;
+    padding: 6px 13px !important;
     font-size: 10px !important;
+  }
+
+  .u-project-meta span:last-child {
+    padding: 5px 11px !important;
+    font-size: 11px !important;
   }
 
   .u-project-content {
@@ -6861,22 +6679,28 @@ html, body {
   }
 
   .u-project-content h3 {
-    font-size: 20px !important;
+    font-size: 21px !important;
+    line-height: 1.25 !important;
+    margin: 0 0 8px 0 !important;
+    min-height: auto !important;
   }
 
   .u-project-content p {
     font-size: 13px !important;
-    line-height: 1.5 !important;
-    margin: 8px 0 14px !important;
+    line-height: 1.52 !important;
+    margin: 0 0 12px 0 !important;
+    min-height: auto !important;
+    -webkit-line-clamp: 3 !important;
   }
 
   .u-project-tags {
     gap: 6px !important;
     margin-bottom: 14px !important;
+    min-height: auto !important;
   }
 
   .u-project-tags span {
-    padding: 6px 12px !important;
+    padding: 5px 10px !important;
     font-size: 10px !important;
   }
 
@@ -6888,12 +6712,12 @@ html, body {
   }
 
   .u-project-button {
-    flex: 1 1 130px !important;
-    height: 44px !important;
-    font-size: 12px !important;
+    flex: 1 1 125px !important;
+    height: 42px !important;
+    font-size: 11px !important;
     padding: 0 12px !important;
-    border-radius: 40px !important;
-    letter-spacing: 0.05em !important;
+    border-radius: 999px !important;
+    letter-spacing: 0.06em !important;
   }
 
   .u-works-cv {
@@ -6903,6 +6727,15 @@ html, body {
   .u-works-cv .u-cv-button {
     padding: 14px 35px !important;
     font-size: 12px !important;
+  }
+}
+
+
+/* Tablet Responsive (2 columns between 769px and 1100px) */
+@media (max-width: 1100px) and (min-width: 769px) {
+  .u-projects {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
   }
 }
 
