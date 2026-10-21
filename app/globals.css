@@ -5155,6 +5155,8 @@ to{
 
   background:white;
 
+  text-align:center;
+
 }
 
 
@@ -5163,10 +5165,29 @@ to{
 
 .u-who-header{
 
-  max-width:1000px;
+  max-width:1100px;
+
+  margin:0 auto;
+
+  text-align:center;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
 
 }
 
+.u-who-header .u-kicker{
+
+  display:inline-block;
+
+  text-align:center;
+
+  margin:0 auto;
+
+}
 
 
 
@@ -5200,6 +5221,7 @@ to{
 
   color:#090909;
 
+  text-align:center;
 
 }
 
@@ -5224,14 +5246,17 @@ to{
 .u-who-content{
 
 
-  max-width:750px;
+  max-width:820px;
 
 
   margin-top:70px;
 
 
-  margin-left:3vw;
+  margin-left:auto;
 
+  margin-right:auto;
+
+  text-align:center;
 
 }
 
@@ -5262,6 +5287,7 @@ to{
 
   margin-bottom:25px;
 
+  text-align:center;
 
 }
 
@@ -5481,8 +5507,11 @@ to{
 
 .u-who-tags{
   width:100%;
+  max-width:1100px;
 
   margin-top:45px;
+  margin-left:auto;
+  margin-right:auto;
 
   display:grid;
   grid-template-columns:repeat(4, 1fr);
@@ -5643,8 +5672,11 @@ to{
 
 .u-who-tags{
   width:100%;
+  max-width:1100px;
 
   margin-top:45px;
+  margin-left:auto;
+  margin-right:auto;
 
   display:grid;
   grid-template-columns:repeat(4, 1fr);
@@ -6656,6 +6688,13 @@ html, body {
 @media (max-width: 768px) {
   .u-who {
     padding: 60px 18px !important;
+    text-align: center !important;
+  }
+
+  .u-who-header {
+    text-align: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
   }
 
   .u-who-header h2 {
@@ -6663,17 +6702,26 @@ html, body {
     line-height: 0.9 !important;
     margin-top: 25px !important;
     word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .u-who-content {
+    margin: 35px auto 0 auto !important;
+    text-align: center !important;
   }
 
   .u-who-content p {
     font-size: 15px !important;
     line-height: 1.7 !important;
+    text-align: center !important;
   }
 
   .u-who-tags {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
     margin-top: 30px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .u-who-tags span {
