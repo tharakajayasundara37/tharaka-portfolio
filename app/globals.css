@@ -102,7 +102,7 @@ body {
   0 20px 60px rgba(0,0,0,.45);
 
 
-  transition:.4s ease;
+  transition: transform .45s cubic-bezier(0.16, 1, 0.3, 1), opacity .35s ease, background .4s ease, border-color .4s ease, box-shadow .4s ease;
 
 }
 
@@ -131,6 +131,12 @@ body {
   0 25px 80px rgba(0,0,0,.65);
 
 
+}
+
+.u-header-new.u-header-hidden {
+  transform: translate(-50%, -170%) !important;
+  opacity: 0;
+  pointer-events: none;
 }
 
 

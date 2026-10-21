@@ -108,179 +108,140 @@ const filterTabs = [
   { id: "uiux", label: "UI / UX (FIGMA)" },
 ] as const;
 
-const projects = [
+type Project = {
+  n: string;
+  title: string;
+  category: string;
+  filterCategory: "web" | "mobile" | "uiux";
+  description: string;
+  image: string;
+  tags: string[];
+  link: string;
+  liveLink?: string;
+  apkDownload?: string;
+  actionLabel?: string;
+  status?: string;
+};
 
+const projects: Project[] = [
   {
-    n:"01",
-    title:"Lansakara Furniture Atelier",
-    category:"LUXURY 3D E-COMMERCE",
-    filterCategory:"web",
-
+    n: "01",
+    title: "WelfareX",
+    category: "FULL STACK PROJECT",
+    filterCategory: "web",
     description:
-    "A high-end bespoke timber e-commerce platform featuring an interactive 3D WebGL chair configurator, dynamic wood material studio, official commission invoice generation, and full-stack artisan portal.",
-
-    image:"/images/lansakara-furniture.jpg",
-
-    tags:[
-      "NEXT.JS 14",
-      "THREE.JS",
-      "WEBGL",
-      "MONGODB",
-      "VERCEL",
-    ],
-
-    link:
-    "https://lansakara-furniture.vercel.app",
-  },
-
-
-  {
-    n:"02",
-    title:"WelfareX",
-    category:"FULL STACK PROJECT",
-    filterCategory:"web",
-
-    description:
-    "A modern welfare management system to manage users, services and digital workflows efficiently.",
-
-    image:"/images/welfare.png",
-
-    tags:[
+      "A modern welfare management system to manage users, services and digital workflows efficiently.",
+    image: "/images/welfare.png",
+    tags: [
       "NEXT.JS",
       "MONGODB",
       "TYPESCRIPT",
     ],
-
-    link:
-    "https://github.com/tharakajayasundara37/welfare-system",
-    liveLink:
-    "https://welfare-system-navy.vercel.app/",
+    link: "https://github.com/tharakajayasundara37/welfare-system",
+    liveLink: "https://welfare-system-navy.vercel.app/",
   },
-
-
   {
-    n:"03",
-    title:"WelfareX UI / UX Design",
-    category:"FIGMA DESIGN",
-    filterCategory:"uiux",
-
+    n: "02",
+    title: "GlobalVista Luxury Travel",
+    category: "FULL-STACK RESERVATION SYSTEM",
+    filterCategory: "web",
     description:
-    "A modern interface design for the WelfareX management platform, focused on clear workflows, usability and a consistent visual experience.",
-
-    image:"/images/welfare-figma-design.jpg",
-
-    tags:[
-      "FIGMA",
-      "UI DESIGN",
-      "UX DESIGN",
-    ],
-
-    link:
-    "https://www.figma.com/design/G2YfK5FweeJhzfzDt1T0Mh/WelfareX-%E2%80%94-Existing-UI-Screens?node-id=41-119&t=kg85OT2ocdda2SAT-1",
-    actionLabel:"FIGMA DESIGN",
-  },
-
-
-  {
-    n:"04",
-    title:"News Blog",
-    category:"FULL STACK PROJECT",
-    filterCategory:"web",
-
-    description:
-    "A modern news and blog management platform for creating, managing and publishing digital content efficiently.",
-
-    image:"/images/news-blog.png",
-
-    tags:[
-      "LARAVEL",
-      "MYSQL",
-      "CSS",
-      "JS",
-    ],
-
-    link:
-    "https://github.com/tharakajayasundara37/NewsBlogManagement-Laravel",
-    liveLink:
-    "https://news-blog-management-laravel.vercel.app/",
-  },
-
-
-  {
-    n:"05",
-    title:"MediCare Appointment App",
-
-    category:"MOBILE APPLICATION",
-    filterCategory:"mobile",
-
-    description:
-    "A healthcare appointment platform designed to connect patients and doctors with seamless booking and management features.",
-
-    image:"/images/medicare.jpg",
-
-    tags:[
-      "KOTLIN",
-      "SQLITE",
-      "MOBILE",
-    ],
-
-    link:
-    "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated",
-    apkDownload:
-    "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated/releases/download/v1.0.0-cv-demo/MediCare-Appointment-App.apk",
-  },
-
-
-  {
-    n:"06",
-    title:"Japolic UI / UX Design",
-
-    category:"FIGMA DESIGN",
-    filterCategory:"uiux",
-
-    description:
-    "A modern web interface design created in Figma with a strong focus on clean layouts, usability and visual experience.",
-
-    image:"/images/figma-design.jpg",
-
-    tags:[
-      "FIGMA",
-      "WEB DESIGN",
-      "MOBILE DESIGN",
-    ],
-
-    status:"DESIGN",
-
-    link:
-    "https://www.figma.com/design/U8s5MWJdLAkC5MUCFg1oqw/Japolic-%E2%80%94-Web-Design-Assessment?node-id=2-68&t=Ri5yYplBqXdmLERL-1",
-    actionLabel:"FIGMA DESIGN",
-  },
-
-
-  {
-    n:"07",
-    title:"GlobalVista Luxury Travel",
-
-    category:"FULL-STACK RESERVATION SYSTEM",
-    filterCategory:"web",
-
-    description:
-    "An enterprise luxury expedition booking ecosystem built with Next.js 16, NestJS, and MongoDB Atlas. Features dynamic itinerary pricing, Leaflet interactive mapping, multi-role auth (Traveller, Guide, Admin), and official print-ready travel vouchers & tax invoices.",
-
-    image:"/images/globalvista.jpg",
-
-    tags:[
+      "An enterprise luxury expedition booking ecosystem built with Next.js 16, NestJS, and MongoDB Atlas. Features dynamic itinerary pricing, Leaflet interactive mapping, multi-role auth (Traveller, Guide, Admin), and official print-ready travel vouchers & tax invoices.",
+    image: "/images/globalvista.jpg",
+    tags: [
       "NEXT.JS 16",
       "NESTJS",
       "MONGODB",
       "LEAFLET",
       "TAILWIND",
     ],
-
-    link:
-    "https://github.com/tharakajayasundara37/GlobalVista",
+    link: "https://github.com/tharakajayasundara37/GlobalVista",
+    liveLink: "https://global-vista-nine.vercel.app",
   },
-
+  {
+    n: "03",
+    title: "Lansakara Furniture Atelier",
+    category: "LUXURY 3D E-COMMERCE",
+    filterCategory: "web",
+    description:
+      "A high-end bespoke timber e-commerce platform featuring an interactive 3D WebGL chair configurator, dynamic wood material studio, official commission invoice generation, and full-stack artisan portal.",
+    image: "/images/lansakara-furniture.jpg",
+    tags: [
+      "NEXT.JS 14",
+      "THREE.JS",
+      "WEBGL",
+      "MONGODB",
+      "VERCEL",
+    ],
+    link: "https://github.com/tharakajayasundara37/Lansakara-furniture",
+    liveLink: "https://lansakara-furniture.vercel.app",
+  },
+  {
+    n: "04",
+    title: "MediCare Appointment App",
+    category: "MOBILE APPLICATION",
+    filterCategory: "mobile",
+    description:
+      "A healthcare appointment platform designed to connect patients and doctors with seamless booking and management features.",
+    image: "/images/medicare.jpg",
+    tags: [
+      "KOTLIN",
+      "SQLITE",
+      "MOBILE",
+    ],
+    link: "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated",
+    apkDownload:
+      "https://github.com/tharakajayasundara37/Medicare-Appointment-App_Updated/releases/download/v1.0.0-cv-demo/MediCare-Appointment-App.apk",
+  },
+  {
+    n: "05",
+    title: "News Blog",
+    category: "FULL STACK PROJECT",
+    filterCategory: "web",
+    description:
+      "A modern news and blog management platform for creating, managing and publishing digital content efficiently.",
+    image: "/images/news-blog.png",
+    tags: [
+      "LARAVEL",
+      "MYSQL",
+      "CSS",
+      "JS",
+    ],
+    link: "https://github.com/tharakajayasundara37/NewsBlogManagement-Laravel",
+    liveLink: "https://news-blog-management-laravel.vercel.app/",
+  },
+  {
+    n: "06",
+    title: "WelfareX UI / UX Design",
+    category: "FIGMA DESIGN",
+    filterCategory: "uiux",
+    description:
+      "A modern interface design for the WelfareX management platform, focused on clear workflows, usability and a consistent visual experience.",
+    image: "/images/welfare-figma-design.jpg",
+    tags: [
+      "FIGMA",
+      "UI DESIGN",
+      "UX DESIGN",
+    ],
+    link: "https://www.figma.com/design/G2YfK5FweeJhzfzDt1T0Mh/WelfareX-%E2%80%94-Existing-UI-Screens?node-id=41-119&t=kg85OT2ocdda2SAT-1",
+    actionLabel: "FIGMA DESIGN",
+  },
+  {
+    n: "07",
+    title: "Japolic UI / UX Design",
+    category: "FIGMA DESIGN",
+    filterCategory: "uiux",
+    description:
+      "A modern web interface design created in Figma with a strong focus on clean layouts, usability and visual experience.",
+    image: "/images/figma-design.jpg",
+    tags: [
+      "FIGMA",
+      "WEB DESIGN",
+      "MOBILE DESIGN",
+    ],
+    link: "https://www.figma.com/design/U8s5MWJdLAkC5MUCFg1oqw/Japolic-%E2%80%94-Web-Design-Assessment?node-id=2-68&t=Ri5yYplBqXdmLERL-1",
+    actionLabel: "FIGMA DESIGN",
+  },
 ];
 
 const technologies:{
@@ -483,6 +444,30 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>)=>{
     useState(0);
 
   const [contactOpen,setContactOpen] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+
+    const handleNavScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 40);
+
+      // Hide header when scrolling down past 80px
+      if (currentScrollY > 80 && currentScrollY - lastScrollY > 8) {
+        setHeaderVisible(false);
+      } else if (lastScrollY - currentScrollY > 8 || currentScrollY <= 60) {
+        // Show header when scrolling up or near top
+        setHeaderVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleNavScroll);
+  }, []);
 
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
@@ -986,7 +971,7 @@ useEffect(()=>{
 
     {/* HEADER */}
 
-    <header className="u-header-new">
+    <header className={`u-header-new ${isScrolled ? "scrolled" : ""} ${!headerVisible ? "u-header-hidden" : ""}`}>
 
 
       <a
