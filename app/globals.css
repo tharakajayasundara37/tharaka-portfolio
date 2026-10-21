@@ -3549,6 +3549,32 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
+
+/* Icon-only Button: Compact Frosted Glass Circle */
+.u-project-button.u-btn-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.u-project-button.u-btn-icon:hover {
+  background: #ffffff;
+  color: #0a0a0c;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
 /* In-development status */
 .u-project-status-badge {
   display: inline-flex;
@@ -6709,6 +6735,12 @@ html, body {
     flex-direction: row !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
+  }
+
+  .u-project-button.u-btn-icon {
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 
   .u-project-button {

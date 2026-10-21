@@ -157,6 +157,7 @@ const projects: Project[] = [
     ],
     link: "https://github.com/tharakajayasundara37/GlobalVista",
     liveLink: "https://global-vista-nine.vercel.app",
+    apkDownload: "/downloads/GlobalVista.apk",
   },
   {
     n: "03",
@@ -2117,7 +2118,39 @@ return (
 
 
           <div className="u-project-actions">
-            {project.liveLink ? (
+            {project.liveLink && project.apkDownload ? (
+              <>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="u-project-button u-btn-icon"
+                  aria-label={`View ${project.title} source code on GitHub`}
+                  title="View Source Code"
+                >
+                  <SiGithub size={16} />
+                </a>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="u-project-button u-btn-secondary"
+                  aria-label={`View ${project.title} live demo`}
+                >
+                  <span>LIVE DEMO</span>
+                  <ArrowUpRight size={14} />
+                </a>
+                <a
+                  href={project.apkDownload}
+                  download="GlobalVista.apk"
+                  className="u-project-button u-btn-primary"
+                  aria-label={`Download ${project.title} APK`}
+                >
+                  <ArrowDown size={14} />
+                  <span>DOWNLOAD APK</span>
+                </a>
+              </>
+            ) : project.liveLink ? (
               <>
                 <a
                   href={project.link}
