@@ -79,7 +79,7 @@ const services = [
     title: "BACKEND SYSTEMS",
     text: "Reliable APIs, databases and complete platforms.",
     tags: ["NODE.JS", "MYSQL", "MONGODB"],
-    image: "/images/news-blog.png",
+    image: "/images/news-blog.jpg",
   },
 
   {
@@ -200,7 +200,7 @@ const projects: Project[] = [
     filterCategory: "web",
     description:
       "A modern news and blog management platform for creating, managing and publishing digital content efficiently.",
-    image: "/images/news-blog.png",
+    image: "/images/news-blog.jpg",
     tags: [
       "LARAVEL",
       "MYSQL",
