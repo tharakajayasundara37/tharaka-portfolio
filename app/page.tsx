@@ -1552,21 +1552,9 @@ useEffect(()=>{
 
 
     <h2>
-
-      Creative
+      Creative thinking.
       <br />
-
-      thinking.
-
-      <br />
-
-      <span>
-        Practical
-        <br />
-        building.
-      </span>
-
-
+      <span>Practical building.</span>
     </h2>
 
 
