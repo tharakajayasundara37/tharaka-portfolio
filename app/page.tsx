@@ -42,6 +42,7 @@ import {
 
 import {
   ArrowDown,
+  ArrowUp,
   ArrowRight,
   ArrowUpRight,
   Code2,
@@ -446,6 +447,15 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>)=>{
 
   const [contactOpen,setContactOpen] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -456,8 +466,32 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>)=>{
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-          // Ignore micro-fluctuations on scroll pause/stop to prevent jitter
+          // Scroll Progress calculation (0 - 100%)
+          if (totalHeight > 0) {
+            const progress = (currentScrollY / totalHeight) * 100;
+            setScrollProgress(Math.min(100, Math.max(0, progress)));
+          }
+
+          // Show floating scroll to top button
+          setShowScrollTop(currentScrollY > 320);
+
+          // Active Section Scrollspy
+          const sectionIds = ["home", "about", "capabilities", "services", "works", "contact"];
+          const scrollMarker = currentScrollY + 220;
+          for (let i = sectionIds.length - 1; i >= 0; i--) {
+            const el = document.getElementById(sectionIds[i]);
+            if (el) {
+              const top = el.offsetTop;
+              if (scrollMarker >= top) {
+                setActiveSection(sectionIds[i]);
+                break;
+              }
+            }
+          }
+
+          // Header hide/show on scroll
           if (Math.abs(currentScrollY - lastScrollY) >= 12 || currentScrollY <= 60) {
             setIsScrolled(currentScrollY > 40);
 
@@ -476,6 +510,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>)=>{
     };
 
     window.addEventListener('scroll', handleNavScroll, { passive: true });
+    handleNavScroll();
     return () => window.removeEventListener('scroll', handleNavScroll);
   }, []);
 
@@ -554,6 +589,12 @@ useEffect(()=>{
     } else {
       observer.observe(element);
     }
+  });
+
+  // Also observe capability cards
+  const capElements = document.querySelectorAll(".u-capability-card");
+  capElements.forEach((el) => {
+    observer.observe(el);
   });
 
   return ()=>{
@@ -794,6 +835,16 @@ return (
 
   <main className="unifex-site">
 
+    {/* TOP GLOWING SCROLL PROGRESS BAR */}
+    <div className="u-scroll-progress-container" aria-hidden="true">
+      <div
+        className="u-scroll-progress-bar"
+        style={{ width: `${scrollProgress}%` }}
+      >
+        <div className="u-scroll-progress-glow" />
+      </div>
+    </div>
+
 
 
     {/* HEADER */}
@@ -815,27 +866,27 @@ return (
 
       <nav className="u-nav-new">
 
-        <a href="#home">
+        <a href="#home" className={activeSection === "home" ? "active" : ""}>
           HOME
         </a>
 
 
-        <a href="#about">
+        <a href="#about" className={activeSection === "about" ? "active" : ""}>
           ABOUT
         </a>
 
 
-        <a href="#services">
+        <a href="#services" className={activeSection === "services" ? "active" : ""}>
           SERVICES
         </a>
 
 
-        <a href="#works">
+        <a href="#works" className={activeSection === "works" ? "active" : ""}>
           WORKS
         </a>
 
 
-        <a href="#contact">
+        <a href="#contact" className={activeSection === "contact" ? "active" : ""}>
           CONTACT
         </a>
 
@@ -868,19 +919,19 @@ return (
       {
         open && (
           <div className="u-mobile-new">
-            <a href="#home" onClick={()=>setOpen(false)}>
+            <a href="#home" className={activeSection === "home" ? "active" : ""} onClick={()=>setOpen(false)}>
               HOME
             </a>
-            <a href="#about" onClick={()=>setOpen(false)}>
+            <a href="#about" className={activeSection === "about" ? "active" : ""} onClick={()=>setOpen(false)}>
               ABOUT
             </a>
-            <a href="#services" onClick={()=>setOpen(false)}>
+            <a href="#services" className={activeSection === "services" ? "active" : ""} onClick={()=>setOpen(false)}>
               SERVICES
             </a>
-            <a href="#works" onClick={()=>setOpen(false)}>
+            <a href="#works" className={activeSection === "works" ? "active" : ""} onClick={()=>setOpen(false)}>
               WORKS
             </a>
-            <a href="#contact" onClick={()=>setOpen(false)}>
+            <a href="#contact" className={activeSection === "contact" ? "active" : ""} onClick={()=>setOpen(false)}>
               CONTACT
             </a>
             <a
@@ -1614,7 +1665,7 @@ return (
 
     {/* WEB DEVELOPMENT */}
 
-    <div className="u-capability-card">
+    <div className="u-capability-card" data-reveal="zoom-in" style={{ transitionDelay: "60ms" }}>
 
 
       <div className="u-capability-tech">
@@ -1658,7 +1709,7 @@ return (
     {/* FULL STACK DEVELOPMENT */}
 
 
-    <div className="u-capability-card">
+    <div className="u-capability-card" data-reveal="zoom-in" style={{ transitionDelay: "140ms" }}>
 
 
 
@@ -1702,7 +1753,7 @@ return (
 
 
 
-    <div className="u-capability-card">
+    <div className="u-capability-card" data-reveal="zoom-in" style={{ transitionDelay: "220ms" }}>
 
 
 
@@ -1768,7 +1819,7 @@ return (
 
 
 
-    <div className="u-capability-card">
+    <div className="u-capability-card" data-reveal="zoom-in" style={{ transitionDelay: "300ms" }}>
 
 
 
@@ -1834,7 +1885,7 @@ return (
 
 
 
-    <div className="u-capability-card">
+    <div className="u-capability-card" data-reveal="zoom-in" style={{ transitionDelay: "380ms" }}>
 
 
 
@@ -1898,11 +1949,15 @@ return (
   {/* SERVICE ROWS */}
   <div className="u-services-showcase-list">
 
-    {services.map((service) => (
+    {services.map((service, index) => (
 
       <article
         className="u-service-showcase-row"
         key={service.title}
+        data-reveal={index % 2 === 0 ? "fade-right" : "fade-left"}
+        style={{
+          transitionDelay: `${index * 90}ms`
+        }}
       >
 
         <span className="u-service-showcase-number">
@@ -2014,16 +2069,20 @@ return (
 
 
 {
-  filteredProjects.map((project)=>(
+  filteredProjects.map((project, index)=>(
 
 
     <article
 
       key={project.title}
 
-      className="u-project in-view"
+      className="u-project"
 
-      data-reveal
+      data-reveal="tilt-up"
+
+      style={{
+        transitionDelay: `${(index % 4) * 120}ms`
+      }}
 
     >
 
@@ -2319,7 +2378,7 @@ id="contact"
 
   {/* LEFT TITLE */}
 
-  <div className="u-contact-title">
+  <div className="u-contact-title" data-reveal="fade-right">
 
 
     <h2 data-reveal>
@@ -2341,7 +2400,7 @@ id="contact"
 
   {/* RIGHT FORM */}
 
-<div className="u-contact-form">
+<div className="u-contact-form" data-reveal="fade-left">
 
 
   <form
@@ -2626,6 +2685,38 @@ id="contact"
         )}
         
         </div>
+        {/* FLOATING SCROLL TO TOP WITH CIRCULAR PROGRESS RING */}
+        <button
+          type="button"
+          onClick={scrollToTop}
+          className={`u-scroll-to-top ${showScrollTop ? "visible" : ""}`}
+          aria-label="Scroll back to top"
+          title="Back to top"
+        >
+          <svg className="progress-ring" width="54" height="54">
+            <circle
+              stroke="rgba(255, 255, 255, 0.12)"
+              strokeWidth="2.5"
+              fill="transparent"
+              r="21"
+              cx="27"
+              cy="27"
+            />
+            <circle
+              className="progress-ring-circle"
+              stroke="#c7ff18"
+              strokeWidth="2.5"
+              strokeDasharray={132}
+              strokeDashoffset={132 - (132 * scrollProgress) / 100}
+              strokeLinecap="round"
+              fill="transparent"
+              r="21"
+              cx="27"
+              cy="27"
+            />
+          </svg>
+          <ArrowUp size={18} />
+        </button>
   </main>
 
 );
