@@ -1425,91 +1425,97 @@ body {
 
 
 
+/* ================= TILTED NEON MARQUEE RIBBON ================= */
+.u-marquee-wrap {
+  width: 100%;
+  overflow: hidden;
+  padding: 34px 0 38px 0;
+  margin: -10px 0 -14px 0;
+  position: relative;
+  z-index: 20;
+}
+
 .u-marquee {
-
-
-  background:#090909;
-
-
-  border-block:
-
-  1px solid rgba(255,255,255,.15);
-
-
-  padding:18px 0;
-
-
-  overflow:hidden;
-
-
-  white-space:nowrap;
-
-
+  width: 108%;
+  margin-left: -4%;
+  background: #d6fe3e;
+  color: #000000;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  padding: 13px 0;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  transform: rotate(-1.25deg);
+  transform-origin: center center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
-
-
-
-.u-marquee div {
-
-
-  display:inline-block;
-
-
-  color:white;
-
-
-  font-size:13px;
-
-
-  font-weight:900;
-
-
-  letter-spacing:.18em;
-
-
-  animation:
-
-  marquee-right 18s linear infinite;
-
-
+.u-marquee-track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: marquee-tape 26s linear infinite;
+  will-change: transform;
 }
 
+.u-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+}
 
+.u-marquee-text {
+  font-family: 'Cabinet Grotesk', 'Syne', 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  color: #000000;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+}
 
+.u-marquee-star {
+  display: inline-block;
+  color: #000000;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
 
-
-
-
-@keyframes marquee-right {
-
-
-
+@keyframes marquee-tape {
   from {
-
-
-    transform:translateX(-100%);
-
-
+    transform: translateX(0);
   }
-
-
-
-
-
   to {
-
-
-    transform:translateX(100%);
-
-
+    transform: translateX(-100%);
   }
+}
 
-
-
+@media (max-width: 768px) {
+  .u-marquee-wrap {
+    padding: 24px 0 28px 0;
+  }
+  .u-marquee {
+    width: 114%;
+    margin-left: -7%;
+    padding: 11px 0;
+    transform: rotate(-1.4deg);
+  }
+  .u-marquee-text {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+  .u-marquee-star {
+    width: 14px;
+    height: 14px;
+  }
+  .u-marquee-item {
+    gap: 20px;
+    padding-right: 20px;
+  }
 }
 
 

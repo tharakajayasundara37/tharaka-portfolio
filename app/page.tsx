@@ -1230,29 +1230,78 @@ return (
 
     </section>
 
-    {/* MARQUEE */}
-
-
-    <div className="u-marquee">
-
-
-      <div>
-
-
-        ✦ FULL STACK ENGINEER ✦
-
-        WEB DEVELOPMENT ✦
-
-        MOBILE APPLICATIONS ✦
-
-        UI/UX DESIGN ✦
-
-        BACKEND SYSTEMS ✦
-
-
+    {/* TILTED NEON MARQUEE TAPE RIBBON */}
+    <div className="u-marquee-wrap">
+      <div className="u-marquee">
+        <div className="u-marquee-track">
+          {[
+            "FULL STACK ENGINEER",
+            "WEB DEVELOPMENT",
+            "MOBILE APPLICATIONS",
+            "UI/UX DESIGN",
+            "BACKEND SYSTEMS",
+            "FULL STACK ENGINEER",
+            "WEB DEVELOPMENT",
+            "MOBILE APPLICATIONS",
+            "UI/UX DESIGN",
+            "BACKEND SYSTEMS",
+          ].map((text, i) => (
+            <span key={`m-item-${i}`} className="u-marquee-item">
+              <span className="u-marquee-text">{text}</span>
+              <svg
+                className="u-marquee-star"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2V22M2 12H22M4.93 4.93L19.07 19.07M4.93 19.07L19.07 4.93"
+                  stroke="currentColor"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          ))}
+        </div>
+        <div className="u-marquee-track" aria-hidden="true">
+          {[
+            "FULL STACK ENGINEER",
+            "WEB DEVELOPMENT",
+            "MOBILE APPLICATIONS",
+            "UI/UX DESIGN",
+            "BACKEND SYSTEMS",
+            "FULL STACK ENGINEER",
+            "WEB DEVELOPMENT",
+            "MOBILE APPLICATIONS",
+            "UI/UX DESIGN",
+            "BACKEND SYSTEMS",
+          ].map((text, i) => (
+            <span key={`m-clone-${i}`} className="u-marquee-item">
+              <span className="u-marquee-text">{text}</span>
+              <svg
+                className="u-marquee-star"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2V22M2 12H22M4.93 4.93L19.07 19.07M4.93 19.07L19.07 4.93"
+                  stroke="currentColor"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          ))}
+        </div>
       </div>
-
-
     </div>
 
 
