@@ -158,7 +158,8 @@ const projects: Project[] = [
     ],
     link: "https://github.com/tharakajayasundara37/GlobalVista",
     liveLink: "https://global-vista-nine.vercel.app",
-    apkDownload: "/downloads/GlobalVista.apk",
+    apkDownload:
+      "https://github.com/tharakajayasundara37/GlobalVista/releases/download/v1.0.0/application-beea222c-3b18-4253-a6a7-c579e3cdb4e8.apk",
   },
   {
     n: "03",
@@ -2250,7 +2251,6 @@ return (
                 </a>
                 <a
                   href={project.apkDownload}
-                  download="GlobalVista.apk"
                   className="u-project-button u-btn-primary"
                   aria-label={`Download ${project.title} APK`}
                 >
